@@ -1,0 +1,128 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "菜谱数据集",
+  "type": "object",
+  "properties": {
+    "dishName": {
+      "type": "string",
+      "description": "菜名"
+    },
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "description": "图片路径"
+      },
+      "description": "菜品图片列表"
+    },
+    "description": {
+      "type": "string",
+      "description": "菜品描述"
+    },
+    "difficulty": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5,
+      "description": "难度星级（1-5星）"
+    },
+    "ingredients": {
+      "type": "object",
+      "properties": {
+        "required": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "配料名称"
+              },
+              "amount": {
+                "type": "string",
+                "description": "用量（如：100g、2个、适量）"
+              },
+              "note": {
+                "type": "string",
+                "description": "备注说明"
+              }
+            },
+            "required": ["name", "amount"]
+          }
+        },
+        "optional": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "amount": {
+                "type": "string"
+              },
+              "note": {
+                "type": "string"
+              }
+            },
+            "required": ["name"]
+          }
+        }
+      },
+      "required": ["required"]
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "stepNumber": {
+            "type": "integer",
+            "description": "步骤序号"
+          },
+          "description": {
+            "type": "string",
+            "description": "步骤详细说明"
+          },
+          "timeRequirement": {
+            "type": "object",
+            "properties": {
+              "duration": {
+                "type": "string",
+                "description": "时间长度（如：10分钟、30秒）"
+              },
+              "type": {
+                "type": "string",
+                "enum": ["exact", "range", "until_condition"],
+                "description": "时间类型：精确时间、范围、直到满足条件"
+              }
+            }
+          },
+          "targetCondition": {
+            "type": "string",
+            "description": "目标状态描述（如：炸至两面金黄、变软、呈粘稠状态）"
+          },
+          "isBlockable": {
+            "type": "boolean",
+            "description": "是否可阻塞（期间可以做其他事情）"
+          },
+          "heatLevel": {
+            "type": "string",
+            "enum": ["大火", "中火", "小火", "中大火", "中小火", "关火", null],
+            "description": "火候要求"
+          }
+        },
+        "required": ["stepNumber", "description"]
+      }
+    },
+    "servings": {
+      "type": "string",
+      "description": "份量说明"
+    },
+    "category": {
+      "type": "string",
+      "enum": ["素菜", "荤菜", "水产", "早餐", "主食", "半成品加工", "汤与粥", "饮料", "酱料", "甜品"],
+      "description": "菜品分类"
+    }
+  },
+  "required": ["dishName", "ingredients", "steps"]
+}

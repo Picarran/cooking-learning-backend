@@ -1,0 +1,3913 @@
+[
+{
+  "dishName": "简易红烧肉",
+  "images": ["dishes/meat_dish/红烧肉/000.jpg", "dishes/meat_dish/红烧肉/001.jpg"],
+  "description": "这份红烧肉教程是一道新手不败的菜谱。配着米饭好吃的停不下来，香糯无敌棒色泽诱人肥而不腻。建议搭配米饭食用。",
+  "difficulty": 3,
+  "servings": "2-3人份",
+  "category": "荤菜",
+  "ingredients": {
+    "required": [
+      {"name": "猪五花肉", "amount": "约3-4斤"},
+      {"name": "生姜", "amount": "6片"},
+      {"name": "冰糖", "amount": "15克（约7块）"},
+      {"name": "生抽", "amount": "10ml"},
+      {"name": "老抽", "amount": "15ml"},
+      {"name": "料酒", "amount": "5ml"},
+      {"name": "开水", "amount": "600-900ml（没过食材）"},
+      {"name": "香叶", "amount": "3片"},
+      {"name": "八角", "amount": "2个"},
+      {"name": "盐", "amount": "2-3g"}
+    ],
+    "optional": [
+      {"name": "鹌鹑蛋或鸡蛋", "amount": "0-2个"},
+      {"name": "豆皮", "amount": "0-80g"}
+    ]
+  },
+  "steps": [
+    {
+      "stepNumber": 1,
+      "description": "猪五花肉切大块（约4.5cm，冷冻半小时至一小时更好切）",
+      "isBlockable": false
+    },
+    {
+      "stepNumber": 2,
+      "description": "冷水锅中放入切好的猪五花肉，加入料酒与葱姜，煮15分钟去掉血腥",
+      "timeRequirement": {
+        "duration": "15分钟",
+        "type": "exact"
+      },
+      "isBlockable": true
+    },
+    {
+      "stepNumber": 3,
+      "description": "锅中放入两片生姜提味",
+      "isBlockable": false
+    },
+    {
+      "stepNumber": 4,
+      "description": "开中小火后直接加入五花肉，不需要放入食用油，每块五花肉六个面都煎一下",
+      "targetCondition": "煎至出油",
+      "heatLevel": "中小火",
+      "isBlockable": false
+    },
+    {
+      "stepNumber": 5,
+      "description": "将煎出的油倒出备用，并将五花肉推至一边，加入15g冰糖，翻炒",
+      "targetCondition": "冰糖融化",
+      "isBlockable": false
+    },
+    {
+      "stepNumber": 6,
+      "description": "融化后将五花肉与冰糖炒至融合上色，加入生抽10ml、老抽15ml、料酒5ml，翻炒至上色",
+      "targetCondition": "上色",
+      "isBlockable": false
+    },
+    {
+      "stepNumber": 7,
+      "description": "加入烧好的开水炖煮40分钟，并放入生姜2片、香叶3片、八角2个",
+      "timeRequirement": {
+        "duration": "40分钟",
+        "type": "exact"
+      },
+      "isBlockable": true,
+      "note": "刀工差的同学切的过大请自觉延长炖煮时间"
+    },
+    {
+      "stepNumber": 8,
+      "description": "盖上锅盖煮至沸腾后，加入煮好扎好孔的鹌鹑蛋和豆皮，开中小火，等待40分钟",
+      "timeRequirement": {
+        "duration": "40分钟",
+        "type": "exact"
+      },
+      "heatLevel": "中小火",
+      "isBlockable": true,
+      "note": "中途可适当翻搅防止粘锅"
+    },
+    {
+      "stepNumber": 9,
+      "description": "打开锅盖，待汤汁快没有的时候开大火收汁（切记不可收干）",
+      "heatLevel": "大火",
+      "targetCondition": "汤汁收至合适程度",
+      "isBlockable": false
+    },
+    {
+      "stepNumber": 10,
+      "description": "加入2-3g盐，翻炒一下，就可以出锅了",
+      "isBlockable": false
+    }
+  ]
+  },
+  {
+    "dishName": "白灼虾",
+    "images": ["dishes/aquatic/白灼虾/白灼虾.webp"],
+    "description": "白灼虾非常适合程序员在沿海地区做，类似于清蒸鱼：简单容错、有营养、有满足感，甚至很好看。",
+    "difficulty": 2,
+    "servings": "1人份",
+    "category": "水产",
+    "ingredients": {
+      "required": [
+        {"name": "活虾", "amount": "250g"},
+        {"name": "洋葱", "amount": "一头"},
+        {"name": "姜", "amount": "一块"},
+        {"name": "蒜", "amount": "5-8瓣"},
+        {"name": "葱", "amount": "一根"},
+        {"name": "食用油", "amount": "10-15ml"},
+        {"name": "料酒", "amount": "20ml"},
+        {"name": "酱油", "amount": "10-15ml"},
+        {"name": "芝麻", "amount": "一把"},
+        {"name": "蚝油", "amount": "10ml"},
+        {"name": "香醋", "amount": "10ml"}
+      ],
+      "optional": []
+    },
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "洋葱切小块，姜切片，平铺平底锅",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 2,
+        "description": "活虾冲洗一下（去除虾线、剪刀减掉虾腿虾须子都是可选操作），控水，铺在平底锅的洋葱、姜片之上",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 3,
+        "description": "锅内倒入料酒，盖上锅盖，中火1分钟，小火5分钟，关火5分钟",
+        "timeRequirement": {
+          "duration": "11分钟",
+          "type": "exact"
+        },
+        "heatLevel": "中火转小火转关火",
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 4,
+        "description": "和上一步并行操作，制作蘸料：葱切成葱花、蒜切碎、倒入酱油、芝麻、香醋，搅拌之",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 5,
+        "description": "油烧热，淋入蘸料",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 6,
+        "description": "虾出锅，用干净的盘子装好",
+        "isBlockable": false
+      }
+    ]
+  },
+  {
+    "dishName": "清蒸鲈鱼",
+    "images": ["dishes/aquatic/清蒸鲈鱼/清蒸鲈鱼.jpg", "dishes/aquatic/清蒸鲈鱼/改刀.jpg", "dishes/aquatic/清蒸鲈鱼/摆盘.jpg"],
+    "description": "清蒸鲈鱼是一道经典的家常菜，肉质鲜嫩，营养丰富。",
+    "difficulty": 3,
+    "servings": "1人份",
+    "category": "水产",
+    "ingredients": {
+      "required": [
+        {"name": "鲈鱼", "amount": "一条"},
+        {"name": "香葱", "amount": "三根"},
+        {"name": "姜", "amount": "一块"},
+        {"name": "食用油", "amount": "10-15ml"},
+        {"name": "蒸鱼豉油", "amount": "10-15ml"},
+        {"name": "料酒", "amount": "10-15ml"},
+        {"name": "食用盐", "amount": "5-10g"}
+      ],
+      "optional": []
+    },
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "姜切片切丝、香葱的葱白切段，葱绿切丝，切丝后放入冷水浸泡备用",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 2,
+        "description": "鲈鱼处理好后洗净，用厨房纸擦干，两面分别划几刀，用盐洗掉鱼身的粘液，并用10g盐抹遍鱼身的内外，腌制10分钟以上",
+        "timeRequirement": {
+          "duration": "10分钟",
+          "type": "exact"
+        },
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 3,
+        "description": "鱼肚内塞上姜和葱白，鱼身也撒上姜和葱白，量为备用的一半。蒸鱼的碟子用筷子将鱼跟碟子隔开蒸",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 4,
+        "description": "水烧热感觉到水温后放进入鱼",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 5,
+        "description": "大火清蒸10分钟",
+        "timeRequirement": {
+          "duration": "10分钟",
+          "type": "exact"
+        },
+        "heatLevel": "大火",
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 6,
+        "description": "蒸好的鱼，用干净的盘子装起来并去除身上姜蒜",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 7,
+        "description": "鱼身浇上15ml蒸鱼豉油",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 8,
+        "description": "鱼身重新撒上姜和葱丝，锅内加上10ml食用油并烧热，将食用油淋至鱼身即可出菜",
+        "isBlockable": false
+      }
+    ]
+  },
+  {
+    "dishName": "蒜蓉虾",
+    "images": ["dishes/aquatic/蒜蓉虾/1.jpeg", "dishes/aquatic/蒜蓉虾/2.jpeg"],
+    "description": "蒜蓉虾是广东省地方传统名菜，色香味俱全。",
+    "difficulty": 2,
+    "servings": "1人份",
+    "category": "水产",
+    "ingredients": {
+      "required": [
+        {"name": "海虾", "amount": "8只"},
+        {"name": "蒜蓉酱", "amount": "50g"},
+        {"name": "食用油", "amount": "20ml"},
+        {"name": "生抽", "amount": "5ml"}
+      ],
+      "optional": []
+    },
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "用刀从从虾头中间切开，切到距离虾尾1cm",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 2,
+        "description": "将蒜蓉酱铺在虾身中间，放在盘子中",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 3,
+        "description": "锅中倒入热水，将盘子放入锅中，大火蒸3分钟",
+        "timeRequirement": {
+          "duration": "3分钟",
+          "type": "exact"
+        },
+        "heatLevel": "大火",
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 4,
+        "description": "烧热油，倒入虾盘中，倒入生抽",
+        "isBlockable": false
+      }
+    ]
+  },
+  {
+    "dishName": "油焖大虾",
+    "images": ["dishes/aquatic/油焖大虾/油焖大虾.jpg"],
+    "description": "油焖大虾是一道经典的家常菜，虾肉鲜嫩，汤汁浓郁。",
+    "difficulty": 4,
+    "servings": "1人份",
+    "category": "水产",
+    "ingredients": {
+      "required": [
+        {"name": "黑虎虾或明虾", "amount": "10只"},
+        {"name": "花椒", "amount": "5g"},
+        {"name": "葱", "amount": "50g"},
+        {"name": "姜", "amount": "20g"},
+        {"name": "黄酒", "amount": "30g"},
+        {"name": "盐", "amount": "3g"},
+        {"name": "冰糖", "amount": "10g"},
+        {"name": "植物油", "amount": "适量"}
+      ],
+      "optional": []
+    },
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "剪虾枪到根上，虾须虾爪都剪掉，沙包挑掉，开背虾线挑出来，洗净备用",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 2,
+        "description": "炸料油：油温三成热放花椒，油热离火，放葱姜（不要让油变色最好）葱稍微变黄沥油",
+        "targetCondition": "葱稍微变黄",
+        "heatLevel": "小火",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 3,
+        "description": "下油，虾摆放整齐，两面变色后轻轻摁虾头",
+        "targetCondition": "两面变色",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 4,
+        "description": "放姜米（姜切成细颗粒）、黄酒30g、水两小碗、盐3g、冰糖10克",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 5,
+        "description": "大火烧开转小火盖盖子闷（中途不能再加汤水，不要开盖）",
+        "heatLevel": "大火转小火",
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 6,
+        "description": "皮亮虾弯就可以起锅，虾摆盘",
+        "targetCondition": "皮亮虾弯",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 7,
+        "description": "收汁（过滤后倒回锅里收浓，放葱油）汤汁剩余1/4时",
+        "targetCondition": "汤汁剩余1/4",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 8,
+        "description": "浇汁",
+        "isBlockable": false
+      }
+    ]
+  },
+  {
+    "dishName": "小龙虾",
+    "images": ["dishes/aquatic/小龙虾/成品.jpg"],
+    "description": "在家里做的小龙虾，肉质细嫩，鲜嫩多汁，干净卫生。",
+    "difficulty": 4,
+    "servings": "2人份",
+    "category": "水产",
+    "ingredients": {
+      "required": [
+        {"name": "小龙虾", "amount": "2斤"},
+        {"name": "油", "amount": "70毫升"},
+        {"name": "香叶", "amount": "两片"},
+        {"name": "八角", "amount": "一个"},
+        {"name": "桂皮", "amount": "3克"},
+        {"name": "青花椒", "amount": "10克"},
+        {"name": "花椒", "amount": "10克"},
+        {"name": "子弹头辣椒", "amount": "5克"},
+        {"name": "葱", "amount": "一根大葱"},
+        {"name": "姜", "amount": "30克"},
+        {"name": "蒜", "amount": "7瓣大蒜"},
+        {"name": "郫县豆瓣", "amount": "30克"},
+        {"name": "黄豆酱", "amount": "30克"},
+        {"name": "啤酒", "amount": "500毫升"},
+        {"name": "生抽", "amount": "30毫升"},
+        {"name": "盐", "amount": "10克"}
+      ],
+      "optional": []
+    },
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "小龙虾刷干净去虾线，葱切2cm葱段，姜蒜切末",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 2,
+        "description": "烧油，油微热，下香叶、八角、桂皮、青花椒、花椒、子弹头辣椒",
+        "heatLevel": "小火",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 3,
+        "description": "香料出香气之后下锅葱姜蒜",
+        "targetCondition": "香料出香气",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 4,
+        "description": "葱姜蒜爆香后，加入郫县豆瓣、黄豆酱，炒出红油",
+        "targetCondition": "炒出红油",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 5,
+        "description": "下小龙虾，翻炒至变色",
+        "targetCondition": "变色",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 6,
+        "description": "加入啤酒，等啤酒烧开后加入生抽，盐",
+        "targetCondition": "啤酒烧开",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 7,
+        "description": "将小龙虾完全煮熟后出锅",
+        "targetCondition": "完全煮熟",
+        "isBlockable": false
+      }
+    ]
+  },
+  {
+    "dishName": "红烧鱼",
+    "images": [],
+    "description": "红烧鱼是一道经典的家常菜，鱼肉鲜嫩，汤汁浓郁。",
+    "difficulty": 4,
+    "servings": "1人份",
+    "category": "水产",
+    "ingredients": {
+      "required": [
+        {"name": "鱼", "amount": "一条中等大小的鲫鱼"},
+        {"name": "姜", "amount": "2-3片"},
+        {"name": "蒜瓣", "amount": "3-4个"},
+        {"name": "干辣椒", "amount": "2-3个"},
+        {"name": "油", "amount": "30-50ml"},
+        {"name": "盐", "amount": "10g"},
+        {"name": "料酒", "amount": "适量"},
+        {"name": "醋", "amount": "5ml"},
+        {"name": "酱油", "amount": "5ml"},
+        {"name": "白砂糖", "amount": "10g"}
+      ],
+      "optional": [
+        {"name": "蚝油", "amount": "5g"},
+        {"name": "葱", "amount": "1-2根"},
+        {"name": "香菜", "amount": "按个人口味"},
+        {"name": "小米椒", "amount": "1-2个"},
+        {"name": "味精", "amount": "5g"}
+      ]
+    },
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "姜蒜准备好，切碎",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 2,
+        "description": "干辣椒切碎，和姜蒜一起",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 3,
+        "description": "加入30-50ml油，等待锅热",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 4,
+        "description": "放入擦干水分的鱼（不想被热油溅一身的话），然后晃动锅，用热油煎鱼，注意这过程一定要小火",
+        "heatLevel": "小火",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 5,
+        "description": "将鱼翻面，重复上面油煎过程",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 6,
+        "description": "放入姜蒜辣椒，翻炒出香味",
+        "targetCondition": "出香味",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 7,
+        "description": "倒入料酒，稍微多一点，此过程注意安全，会起大量油烟",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 8,
+        "description": "倒入醋（喜欢醋可以多放一点）",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 9,
+        "description": "然后放入白砂糖，酱油（老抽）",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 10,
+        "description": "加入冷水，以刚好淹没鱼身为宜，然后调成中火，盖上锅盖，大概1分钟后将鱼翻身，继续盖上锅盖",
+        "heatLevel": "中火",
+        "timeRequirement": {
+          "duration": "1分钟",
+          "type": "exact"
+        },
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 11,
+        "description": "3-4分钟后，加入盐、小米椒、蚝油（味精、鸡精等），然后继续盖上锅盖，后续继续要翻身",
+        "timeRequirement": {
+          "duration": "3-4分钟",
+          "type": "range"
+        },
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 12,
+        "description": "当锅内汤汁收汁到鱼的脊背线上的鱼鳍下面一点点的时候（或者汤汁不多的时候），转小火，加入香菜，葱花，然后盖上锅盖20秒，关火",
+        "heatLevel": "小火",
+        "timeRequirement": {
+          "duration": "20秒",
+          "type": "exact"
+        },
+        "targetCondition": "汤汁收汁到鱼的脊背线上的鱼鳍下面一点点",
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 13,
+        "description": "起锅",
+        "isBlockable": false
+      }
+    ]
+  },
+  {
+    "dishName": "西红柿炒鸡蛋",
+    "images": [],
+    "description": "西红柿炒蛋是中国家常几乎最常见的一道菜肴。它的原材料易于搜集，制作步骤也较为简单，所以非常适合新厨师上手，是很多人学习做菜时做的第一道菜。",
+    "difficulty": 2,
+    "servings": "1人份",
+    "category": "素菜",
+    "ingredients": {
+      "required": [
+        {"name": "西红柿", "amount": "1个（约180g）"},
+        {"name": "鸡蛋", "amount": "1.5个（向上取整）"},
+        {"name": "食用油", "amount": "4ml/个鸡蛋"},
+        {"name": "盐", "amount": "1.5-2g"}
+      ],
+      "optional": [
+        {"name": "糖", "amount": "0-2g"},
+        {"name": "葱花", "amount": "0-10g"}
+      ]
+    },
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "西红柿洗净",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 2,
+        "description": "（可选）开水烫表皮，然后将西红柿放入冷水，剥去外皮",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 3,
+        "description": "西红柿去蒂，切成边长不超过4cm的小块",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 4,
+        "description": "将鸡蛋打入碗中，加入1g盐，搅匀",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 5,
+        "description": "热锅，加入食用油",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 6,
+        "description": "油热后，倒入鸡蛋液。翻炒至鸡蛋结为固体且颜色微微发黄",
+        "targetCondition": "鸡蛋结为固体且颜色微微发黄",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 7,
+        "description": "关火。将半熟鸡蛋盛盘，重新开火（注意：不要洗锅）",
+        "heatLevel": "关火",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 8,
+        "description": "加入西红柿块，锅铲拍打并翻炒20秒，或至西红柿软烂",
+        "timeRequirement": {
+          "duration": "20秒",
+          "type": "exact"
+        },
+        "targetCondition": "西红柿软烂",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 9,
+        "description": "向锅中加入半熟鸡蛋，翻炒均匀",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 10,
+        "description": "加入剩余的盐、糖（可选，如果倾向于甜味版本）、葱花（可选），翻炒均匀",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 11,
+        "description": "关火，盛盘",
+        "heatLevel": "关火",
+        "isBlockable": false
+      }
+    ]
+  },
+  {
+    "dishName": "酸辣土豆丝",
+    "images": [],
+    "description": "酸辣土豆丝是一道简单易做的菜。色泽光亮，酸辣可口。辅料辣椒富含维生素C。该菜用料简单，好学易做",
+    "difficulty": 2,
+    "servings": "1人份",
+    "category": "素菜",
+    "ingredients": {
+      "required": [
+        {"name": "土豆", "amount": "240g（越细越长更好）"},
+        {"name": "大蒜", "amount": "4瓣"},
+        {"name": "青椒", "amount": "0.5个"},
+        {"name": "红椒", "amount": "0.5个"},
+        {"name": "干辣椒", "amount": "3个"},
+        {"name": "葱", "amount": "1根"},
+        {"name": "生抽", "amount": "5ml"},
+        {"name": "陈醋", "amount": "10ml"},
+        {"name": "盐", "amount": "2g"},
+        {"name": "食用油", "amount": "10-15ml"}
+      ],
+      "optional": []
+    },
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "土豆去皮、切丝（或用刨丝器）",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 2,
+        "description": "切好的土豆丝用清水清洗，去除多余的淀粉，然后对土豆丝焯水10秒。沥干，备用",
+        "timeRequirement": {
+          "duration": "10秒",
+          "type": "exact"
+        },
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 3,
+        "description": "葱蒜干辣椒切小块，青红椒切丝",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 4,
+        "description": "热锅，小火热油爆香蒜和干辣椒",
+        "heatLevel": "小火",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 5,
+        "description": "加入青红椒翻炒几下，加入土豆丝翻炒至变色",
+        "targetCondition": "变色",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 6,
+        "description": "加5ml生抽，10ml陈醋，蒜末，最后加入盐翻炒均匀即可",
+        "isBlockable": false
+      }
+    ]
+  },
+  {
+    "dishName": "凉拌黄瓜",
+    "images": [],
+    "description": "凉拌黄瓜是一道简单清爽的凉菜，制作简单，口感清脆。",
+    "difficulty": 1,
+    "servings": "1人份",
+    "category": "素菜",
+    "ingredients": {
+      "required": [
+        {"name": "黄瓜", "amount": "200克"},
+        {"name": "醋", "amount": "7.5ml + 4ml"},
+        {"name": "酱油", "amount": "5ml + 2.5ml"},
+        {"name": "蒜", "amount": "3瓣"},
+        {"name": "盐", "amount": "0.4克 + 0.2克"},
+        {"name": "香油", "amount": "5ml + 2ml"},
+        {"name": "蚝油", "amount": "5ml"}
+      ],
+      "optional": []
+    },
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "用菜刀将黄瓜拍扁，再剁成长3厘米的碎块",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 2,
+        "description": "将碎黄瓜装入碗中",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 3,
+        "description": "将蒜拍碎切成碎末",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 4,
+        "description": "将醋，酱油，盐，蚝油和蒜依次倒入碗中搅拌均匀并腌制15分钟",
+        "timeRequirement": {
+          "duration": "15分钟",
+          "type": "exact"
+        },
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 5,
+        "description": "将香油倒入碗中并均匀搅拌",
+        "isBlockable": false
+      }
+    ]
+  },
+  {
+    "dishName": "地三鲜",
+    "images": [],
+    "description": "地三鲜是一道经典的东北菜，由茄子、土豆、尖椒三种蔬菜制作而成。",
+    "difficulty": 3,
+    "servings": "2-4人份",
+    "category": "素菜",
+    "ingredients": {
+      "required": [
+        {"name": "茄子", "amount": "100g"},
+        {"name": "土豆", "amount": "150g"},
+        {"name": "尖椒", "amount": "3-4个"},
+        {"name": "葱", "amount": "3g"},
+        {"name": "姜", "amount": "10g"},
+        {"name": "蒜", "amount": "10g"},
+        {"name": "豆瓣酱", "amount": "20ml"},
+        {"name": "生抽", "amount": "10ml"},
+        {"name": "盐", "amount": "8g"},
+        {"name": "糖", "amount": "10g"},
+        {"name": "淀粉", "amount": "20g"},
+        {"name": "食用油", "amount": "25ml"}
+      ],
+      "optional": []
+    },
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "土豆洗净、去皮。茄子、尖椒洗净",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 2,
+        "description": "葱3g切0.5cm小段。蒜10g剁碎。姜10g切沫",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 3,
+        "description": "茄子、土豆、尖椒均切成15g的小块",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 4,
+        "description": "热锅，加入25ml油",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 5,
+        "description": "加入土豆，煎炸大约3分钟，待其到大约8分熟，以显示金黄色为准",
+        "timeRequirement": {
+          "duration": "3分钟",
+          "type": "exact"
+        },
+        "targetCondition": "显示金黄色",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 6,
+        "description": "捞出土豆，留下油",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 7,
+        "description": "加入茄子，煎炸大约40秒，待其到大约7分熟，以显示金黄色为准",
+        "timeRequirement": {
+          "duration": "40秒",
+          "type": "exact"
+        },
+        "targetCondition": "显示金黄色",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 8,
+        "description": "如果锅内已经没有流动的油，可以考虑补充15ml油",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 9,
+        "description": "放入葱3g、姜10g、豆瓣酱20ml、生抽10ml、盐8g、糖10g",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 10,
+        "description": "放入之前处理的土豆和尖椒",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 11,
+        "description": "翻炒1分钟",
+        "timeRequirement": {
+          "duration": "1分钟",
+          "type": "exact"
+        },
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 12,
+        "description": "放入蒜10g",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 13,
+        "description": "加入200ml水和20g淀粉",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 14,
+        "description": "待水开后，汤减少一半时，关火盛盘",
+        "targetCondition": "汤减少一半",
+        "isBlockable": false
+      }
+    ]
+  },
+  {
+    "dishName": "溏心蛋",
+    "images": [],
+    "description": "喜欢健身的小伙伴可以在每颗鸡蛋中获得6克蛋白质。大约15分钟可以完成制作。",
+    "difficulty": 3,
+    "servings": "1人份",
+    "category": "早餐",
+    "ingredients": {
+      "required": [
+        {"name": "鸡蛋", "amount": "1颗或更多"},
+        {"name": "水", "amount": "淹过鸡蛋约2公分的冷水"}
+      ],
+      "optional": []
+    },
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "将鸡蛋放入电锅中。鸡蛋不可互相堆叠，应皆在底部，并留有空间可以晃动",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 2,
+        "description": "倒入淹过鸡蛋约2公分的冷水",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 3,
+        "description": "开盖，使用最大功率加热至水滚起（大约85-95度，稍微滚动，不需完全沸腾）",
+        "targetCondition": "水滚起（大约85-95度）",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 4,
+        "description": "关火，盖上盖子，让鸡蛋静置。想要中央有流动的蛋黄，需静置6分钟；若想要完全煮熟的易碎蛋黄，需静置10分钟",
+        "timeRequirement": {
+          "duration": "6-10分钟",
+          "type": "range"
+        },
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 5,
+        "description": "沥干水分，用冷水冲洗鸡蛋约1分钟，即可去壳食用",
+        "timeRequirement": {
+          "duration": "1分钟",
+          "type": "exact"
+        },
+        "isBlockable": false
+      }
+    ]
+  },
+  {
+    "dishName": "茶叶蛋",
+    "images": [],
+    "description": "茶香浓郁，鲜香可口的高蛋白快速营养早餐，大约耗时30分钟。烹饪略微耗时，可以周末尝试，做一次大约够2-3个人吃。",
+    "difficulty": 3,
+    "servings": "2-3人份",
+    "category": "早餐",
+    "ingredients": {
+      "required": [
+        {"name": "鸡蛋", "amount": "400g（约8颗）"},
+        {"name": "八角", "amount": "4g（约2颗）"},
+        {"name": "香叶", "amount": "0.5-1g（约2片）"},
+        {"name": "桂皮", "amount": "3g（1小块）"},
+        {"name": "茴香", "amount": "5g"},
+        {"name": "冰糖", "amount": "15g"},
+        {"name": "红茶", "amount": "20g"},
+        {"name": "生抽", "amount": "15g"},
+        {"name": "老抽", "amount": "25g"},
+        {"name": "食盐", "amount": "3g"}
+      ],
+      "optional": []
+    },
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "用冷水将鸡蛋煮熟，大火大约8分钟（根据自家厨具决定）",
+        "timeRequirement": {
+          "duration": "8分钟",
+          "type": "exact"
+        },
+        "heatLevel": "大火",
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 2,
+        "description": "鸡蛋捞出，过冷水",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 3,
+        "description": "将鸡蛋互相碰撞，使每个鸡蛋产生裂缝",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 4,
+        "description": "将鸡蛋下锅，放入八角，香叶，桂皮，茴香，冰糖，红茶，生抽，老抽，食盐",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 5,
+        "description": "加水直至没过鸡蛋",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 6,
+        "description": "大火煮开之后，转中小火煮15分钟",
+        "timeRequirement": {
+          "duration": "15分钟",
+          "type": "exact"
+        },
+        "heatLevel": "大火转中小火",
+        "isBlockable": true
+      }
+    ]
+  },
+  {
+    "dishName": "蛋炒饭",
+    "images": [],
+    "description": "蛋炒饭是一道经典的家常主食，制作简单，营养丰富。",
+    "difficulty": 3,
+    "servings": "1-2人份",
+    "category": "主食",
+    "ingredients": {
+      "required": [
+        {"name": "冷饭", "amount": "500ml"},
+        {"name": "鸡蛋", "amount": "1.5个（向下取整）"},
+        {"name": "火腿", "amount": "2个"},
+        {"name": "油", "amount": "12ml"},
+        {"name": "盐", "amount": "4-6g"},
+        {"name": "胡椒粉", "amount": "8g"},
+        {"name": "生抽", "amount": "10ml"},
+        {"name": "香葱", "amount": "1颗"}
+      ],
+      "optional": [
+        {"name": "黄瓜", "amount": "30g"},
+        {"name": "胡萝卜", "amount": "30g"},
+        {"name": "灯影牛肉丝/午餐肉/腊肠/卤肉", "amount": "适量"}
+      ]
+    },
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "米饭提前用铲子铲成小块",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 2,
+        "description": "火腿肠、胡萝卜、黄瓜等根据需求切片或者块状",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 3,
+        "description": "将蛋白，蛋黄分开，分别打入一个大碗里，各自搅匀。注意，不要在这一步加盐",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 4,
+        "description": "大火热锅，待锅里冒烟放入食用油，放入蛋白，待主体凝固后盛出备用",
+        "heatLevel": "大火",
+        "targetCondition": "主体凝固",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 5,
+        "description": "如果油够，则直接放入蛋黄，如果油不够则放入食用油并等其升温到大火热锅",
+        "heatLevel": "大火",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 6,
+        "description": "待主体凝固后，将火调至中小火，倒入火腿肠、熟肉，胡萝卜、黄瓜等备料、翻炒10秒钟（到爆香）",
+        "timeRequirement": {
+          "duration": "10秒",
+          "type": "exact"
+        },
+        "heatLevel": "中小火",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 7,
+        "description": "重新倒入蛋白，翻炒5秒，迅速倒入米饭大火翻炒，为的就是每一粒饭都裹上鸡蛋",
+        "timeRequirement": {
+          "duration": "5秒",
+          "type": "exact"
+        },
+        "heatLevel": "大火",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 8,
+        "description": "翻炒过程中将米饭的块状捣碎、这一步过程会比较长、待米饭全部捣碎再翻炒均匀即可",
+        "targetCondition": "米饭全部捣碎",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 9,
+        "description": "调至小火、加盐、胡椒粉、生抽",
+        "heatLevel": "小火",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 10,
+        "description": "进一步翻炒均匀，能看到一些米饭在锅里有\"跳起来\"的时候其实就已经差不多了",
+        "targetCondition": "米饭在锅里有跳起来",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 11,
+        "description": "最后倒入香葱再翻炒10秒",
+        "timeRequirement": {
+          "duration": "10秒",
+          "type": "exact"
+        },
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 12,
+        "description": "关火、盛入碗中",
+        "isBlockable": false
+      }
+    ]
+  },
+  {
+    "dishName": "电饭煲蒸米饭",
+    "images": [],
+    "description": "电饭煲蒸米饭是最基础的主食制作方法，简单易学。",
+    "difficulty": 1,
+    "servings": "1人份",
+    "category": "主食",
+    "ingredients": {
+      "required": [
+        {"name": "江南米或北方大米", "amount": "100-200ml"},
+        {"name": "水", "amount": "根据指尖量水法确定"}
+      ],
+      "optional": []
+    },
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "清洗米",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 2,
+        "description": "将米和水一起加入电饭煲中",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 3,
+        "description": "连接电饭煲电源，进入加热模式。等待大约30分钟",
+        "timeRequirement": {
+          "duration": "30分钟",
+          "type": "exact"
+        },
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 4,
+        "description": "待电饭煲自动进入保温模式后",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 5,
+        "description": "将米在电饭煲中闷10-15分钟",
+        "timeRequirement": {
+          "duration": "10-15分钟",
+          "type": "range"
+        },
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 6,
+        "description": "盛出米",
+        "isBlockable": false
+      }
+    ]
+  },
+  {
+    "dishName": "西红柿鸡蛋汤",
+    "images": [],
+    "description": "西红柿鸡蛋汤是一道简单易做的家常汤品，营养丰富，口感清爽。",
+    "difficulty": 2,
+    "servings": "1人份",
+    "category": "汤与粥",
+    "ingredients": {
+      "required": [
+        {"name": "西红柿", "amount": "1个"},
+        {"name": "鸡蛋", "amount": "1-2个"},
+        {"name": "香油", "amount": "2滴"},
+        {"name": "盐", "amount": "15克"},
+        {"name": "葱、姜、蒜", "amount": "15克"},
+        {"name": "食用油", "amount": "15毫升"}
+      ],
+      "optional": [
+        {"name": "味素", "amount": "5克"}
+      ]
+    },
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "将西红柿洗净，切块",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 2,
+        "description": "葱姜蒜切碎",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 3,
+        "description": "鸡蛋打到碗中，用筷子（或打蛋器）搅拌均匀",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 4,
+        "description": "热锅，并放入15毫升的油，待能从油中看到冒出一丝烟时，放入葱姜蒜翻炒30秒",
+        "timeRequirement": {
+          "duration": "30秒",
+          "type": "exact"
+        },
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 5,
+        "description": "放入西红柿翻炒1分钟",
+        "timeRequirement": {
+          "duration": "1分钟",
+          "type": "exact"
+        },
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 6,
+        "description": "倒入水，水的高度大约为锅内菜品高度的1.2倍，并放入盐",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 7,
+        "description": "待开锅后，将鸡蛋液放入，并用筷子将鸡蛋打散，放入味素和香油",
+        "targetCondition": "开锅",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 8,
+        "description": "等待30秒，关火出锅",
+        "timeRequirement": {
+          "duration": "30秒",
+          "type": "exact"
+        },
+        "isBlockable": true
+      }
+    ]
+  },
+  {
+    "dishName": "小米粥",
+    "images": [],
+    "description": "小米含有多种维生素、氨基酸、脂肪和碳水化合物，营养价值较高。小米含糖也很高，产热量比大米高许多。",
+    "difficulty": 2,
+    "servings": "1人份",
+    "category": "汤与粥",
+    "ingredients": {
+      "required": [
+        {"name": "小米", "amount": "100克"},
+        {"name": "水（山泉水最佳）", "amount": "2000克"}
+      ],
+      "optional": []
+    },
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "小米100克，放入碗中，用水轻淘一遍（用手搅拌一下，将水倒掉，只是去掉外面的浮灰，不可搓洗！！！）",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 2,
+        "description": "水烧开，务必烧开！！！",
+        "targetCondition": "水烧开",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 3,
+        "description": "水烧开沸腾时，将小米倒入锅内。（很容易被忽视的一个很重要的环节）",
+        "targetCondition": "水烧开沸腾",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 4,
+        "description": "搅拌使得小米不会粘连锅底，继续用大火熬6-10分钟，注意用中间穿插搅拌几次",
+        "timeRequirement": {
+          "duration": "6-10分钟",
+          "type": "range"
+        },
+        "heatLevel": "大火",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 5,
+        "description": "改中火、文火熬15-20分钟，锅盖要错开一条缝，千万不能让小米油溜掉哟，中间继续搅拌几次，不要糊锅底",
+        "timeRequirement": {
+          "duration": "15-20分钟",
+          "type": "range"
+        },
+        "heatLevel": "中火转文火",
+        "isBlockable": true
+      }
+    ]
+  },
+  {
+    "dishName": "烤蛋挞",
+    "images": ["dishes/dessert/烤蛋挞/烤蛋挞.png"],
+    "description": "烤蛋挞是一道简单易于制作的甜品，且半成品可置于冰箱冷冻长时间保存，随吃随取，出品时间约1小时。",
+    "difficulty": 4,
+    "servings": "30只",
+    "category": "甜品",
+    "ingredients": {
+      "required": [
+        {"name": "蛋挞皮", "amount": "30只"},
+        {"name": "鸡蛋", "amount": "8个"},
+        {"name": "牛奶", "amount": "200毫升"},
+        {"name": "淡奶油", "amount": "450毫升"},
+        {"name": "白砂糖", "amount": "80克"}
+      ],
+      "optional": []
+    },
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "将碗置于克数称上，称量450克淡奶油",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 2,
+        "description": "加入80克白砂糖（甜度中等，可按个人口味增减，建议范围60-100克）",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 3,
+        "description": "加入200克牛奶",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 4,
+        "description": "取8个蛋黄加入，蛋清可留作他用",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 5,
+        "description": "均匀搅拌所有材料直至白砂糖全部融化",
+        "targetCondition": "白砂糖全部融化",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 6,
+        "description": "使用网筛对搅拌完成的食材进行过滤，滤除鸡蛋黏膜、鸡蛋壳、未融化的白砂糖、结块的淡奶油",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 7,
+        "description": "此时请将烤箱设置220摄氏度开始预热（约10分钟），记得拿出烤盘",
+        "timeRequirement": {
+          "duration": "10分钟",
+          "type": "exact"
+        },
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 8,
+        "description": "将蛋挞皮以0.5厘米的间隔均匀放置于烤盘中",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 9,
+        "description": "将过滤完成的食材倒入蛋挞皮中，液面距离蛋挞皮上沿0.5厘米即可，不宜过多",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 10,
+        "description": "截止此步骤，半成品蛋挞的制作已经完成，可直接放入冰箱速冻12小时以上保存",
+        "timeRequirement": {
+          "duration": "12小时",
+          "type": "exact"
+        },
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 11,
+        "description": "将半成品蛋挞放入烤箱中进行烤制，温度为200摄氏度，时间为25分钟",
+        "timeRequirement": {
+          "duration": "25分钟",
+          "type": "exact"
+        },
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 12,
+        "description": "烤制结束后即可食用",
+        "isBlockable": false
+      }
+    ]
+  },
+  {
+    "dishName": "雪花酥",
+    "images": ["dishes/dessert/雪花酥/雪花酥成品.jpg"],
+    "description": "雪花酥是一个快捷简便的甜点，适合装盒送礼，制作耗时30分钟。",
+    "difficulty": 3,
+    "servings": "1人份",
+    "category": "甜品",
+    "ingredients": {
+      "required": [
+        {"name": "无盐黄油", "amount": "20g"},
+        {"name": "棉花糖", "amount": "75g"},
+        {"name": "全脂奶粉", "amount": "40g"},
+        {"name": "混合坚果", "amount": "60g"},
+        {"name": "饼干", "amount": "75g"}
+      ],
+      "optional": []
+    },
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "饼干超过一元硬币大小先切成小块",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 2,
+        "description": "无盐黄油加入锅中，小火加热至无盐黄油完全融化",
+        "heatLevel": "小火",
+        "targetCondition": "无盐黄油完全融化",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 3,
+        "description": "棉花糖加入锅中，使用刮刀搅拌，直至棉花糖融化并与无盐黄油均匀融合",
+        "targetCondition": "棉花糖融化并与无盐黄油均匀融合",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 4,
+        "description": "20g奶粉加入锅中，使用刮刀搅拌，奶粉与黄油棉花糖混合物搅拌均匀后立即关火",
+        "targetCondition": "奶粉与黄油棉花糖混合物搅拌均匀",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 5,
+        "description": "准备好的所有混合坚果与饼干趁热加入锅中，使用刮刀搅拌",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 6,
+        "description": "搅拌到温度下降到手可以接触的温度后，戴上一次塑料手套，在锅中搓揉或者双手拿起拉扯，让饼干混合坚果与棉花糖黄油奶粉混合物分散均匀",
+        "targetCondition": "温度下降到手可以接触的温度",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 7,
+        "description": "将上述步骤混合物压入模具中，边角压实，擀面杖擀平，未满的一边用手尽量压成直边",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 8,
+        "description": "室温放凉，完全冷却后脱模，按照模具纹路切块，或切成自己喜欢的大小，撒上剩余奶粉，尽量使雪花酥每面都沾上奶粉",
+        "targetCondition": "完全冷却",
+        "isBlockable": true
+      }
+    ]
+  },
+  {
+    "dishName": "宫保鸡丁",
+    "images": ["dishes/meat_dish/宫保鸡丁/宫保鸡丁.jpg"],
+    "description": "老派川菜的简单做法分享",
+    "difficulty": 4,
+    "servings": "1人份",
+    "category": "荤菜",
+    "ingredients": {
+      "required": [
+        {"name": "手枪腿（或者鸡胸脯肉）", "amount": "1支（约350g）"},
+        {"name": "大葱", "amount": "1根（约180g）"},
+        {"name": "熟花生", "amount": "150g"},
+        {"name": "姜片", "amount": "10g"},
+        {"name": "干辣椒（或者二荆条）", "amount": "10g"},
+        {"name": "生抽酱油", "amount": "10g"},
+        {"name": "白糖", "amount": "2g"},
+        {"name": "盐", "amount": "2g"},
+        {"name": "植物油", "amount": "20g"},
+        {"name": "淀粉", "amount": "15g"},
+        {"name": "料酒", "amount": "15g"}
+      ],
+      "optional": [
+        {"name": "老抽酱油", "amount": "5g"},
+        {"name": "花椒", "amount": "5g"},
+        {"name": "香醋", "amount": "5g"},
+        {"name": "鸡精", "amount": "2g"},
+        {"name": "芝麻油", "amount": "10g"},
+        {"name": "豆瓣酱", "amount": "10g"},
+        {"name": "莴笋", "amount": "约250g"}
+      ]
+    },
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "手枪腿用剪刀去骨，鸡肉面用刀背拍打一遍，切条后切至1.5cm见方肉丁；泡于清水10分钟，捞出控干备用",
+        "timeRequirement": {
+          "duration": "10分钟",
+          "type": "exact"
+        },
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 2,
+        "description": "取大葱葱绿与姜片5g于碗中，倒入50g开水备用；葱白切1.5cm圆粒备用；取花生放入微波炉高火5分钟焙干备用",
+        "timeRequirement": {
+          "duration": "5分钟",
+          "type": "exact"
+        },
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 3,
+        "description": "鸡丁中加入盐2g，老抽酱油5g，料酒15g，淀粉15g搅拌均匀，至微微发干；缓慢加入部分葱姜水，搅拌鸡丁至粘手；保鲜膜密封，放入冰箱腌制1小时",
+        "timeRequirement": {
+          "duration": "1小时",
+          "type": "exact"
+        },
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 4,
+        "description": "干辣椒切段；起锅，大火烧热转小火；放入干辣椒焙干至微微发糊，捞起备用；花椒焙干至有香味，捞起备用",
+        "heatLevel": "大火转小火",
+        "targetCondition": "干辣椒微微发糊，花椒有香味",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 5,
+        "description": "转大火，倒入20g植物油，7成热（竹筷子起泡）下入鸡丁，煎至上面开始发白，用锅铲翻面，煎30秒后翻炒均匀",
+        "timeRequirement": {
+          "duration": "30秒",
+          "type": "exact"
+        },
+        "heatLevel": "大火",
+        "targetCondition": "上面开始发白",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 6,
+        "description": "下入葱粒翻炒，加入余下葱姜水不够100g再加一点清水（务必是热水）；盖上锅盖，转中小火焖2分钟",
+        "timeRequirement": {
+          "duration": "2分钟",
+          "type": "exact"
+        },
+        "heatLevel": "中小火",
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 7,
+        "description": "转大火，下入熟花生，干辣椒和花椒；加入鸡精2g，香醋5g，白糖2g，翻炒均匀",
+        "heatLevel": "大火",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 8,
+        "description": "淀粉10g加50g清水调成水淀粉，加入锅中，翻炒均匀，收汁到自己想要的浓度",
+        "targetCondition": "收汁到自己想要的浓度",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 9,
+        "description": "关火，淋入芝麻油10g，即可出锅",
+        "isBlockable": false
+      }
+    ]
+  },
+  {
+    "dishName": "糖醋排骨",
+    "images": ["dishes/meat_dish/糖醋排骨/1.jpeg", "dishes/meat_dish/糖醋排骨/2.jpeg"],
+    "description": "糖醋排骨是一道具有代表性的传统名菜，以其独特的酸甜口味深受大众喜爱。本菜谱在保留原有风味的基础上，对用料绑定、火候控制以及操作细节作了优化，旨在提高菜谱的可迁移性和可执行性。",
+    "difficulty": 4,
+    "servings": "1人份",
+    "category": "荤菜",
+    "ingredients": {
+      "required": [
+        {"name": "排骨", "amount": "300g"},
+        {"name": "白砂糖", "amount": "30g"},
+        {"name": "食用油", "amount": "300-350ml"},
+        {"name": "生抽", "amount": "5ml"},
+        {"name": "蚝油", "amount": "5ml"},
+        {"name": "老抽", "amount": "5ml"},
+        {"name": "鸡精", "amount": "2g"},
+        {"name": "姜片", "amount": "2片"},
+        {"name": "芝麻", "amount": "2g"},
+        {"name": "番茄酱", "amount": "10g"},
+        {"name": "香醋", "amount": "5ml"},
+        {"name": "五香粉", "amount": "2g"}
+      ],
+      "optional": []
+    },
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "排骨与姜片放入冷水中，大火加热至水沸腾、出现大量泡沫后转中火，待水持续沸腾时再转小火焯水2-3分钟，捞出备用",
+        "timeRequirement": {
+          "duration": "2-3分钟",
+          "type": "range"
+        },
+        "heatLevel": "大火转中火转小火",
+        "targetCondition": "水沸腾、出现大量泡沫",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 2,
+        "description": "用开水反复清洗排骨2-3遍，确保彻底去除血沫",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 3,
+        "description": "在锅中倒入足够量的食用油进行深炸（油量依据锅具大小而定，建议约300ml供一般家庭使用），待油温升至约170°C后，下排骨炸制3-5分钟，直至表面略呈金黄色，捞出控油",
+        "timeRequirement": {
+          "duration": "3-5分钟",
+          "type": "range"
+        },
+        "targetCondition": "表面略呈金黄色",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 4,
+        "description": "另取干净锅，置于小火上加热50ml热水，加入白砂糖30g，轻轻搅拌直至糖完全溶解，并略呈淡黄色",
+        "heatLevel": "小火",
+        "targetCondition": "糖完全溶解，并略呈淡黄色",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 5,
+        "description": "将炸好的排骨倒入炒制糖水的锅中，迅速翻炒30秒后，依次加入香醋5ml、生抽5ml、蚝油5ml、鸡精2g、番茄酱10g、五香粉2g，再次翻炒30秒，使调料均匀裹覆排骨，然后加入开水至刚好没过排骨",
+        "timeRequirement": {
+          "duration": "30秒",
+          "type": "exact"
+        },
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 6,
+        "description": "用大火将锅中液体煮沸后，加入老抽5ml进行上色，并快速收汁；若排骨块较大，可转小火焖煮5-10分钟以便更好地入味",
+        "timeRequirement": {
+          "duration": "5-10分钟",
+          "type": "range"
+        },
+        "heatLevel": "大火转小火",
+        "targetCondition": "锅中液体煮沸",
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 7,
+        "description": "起锅装盘，撒上芝麻2g，即可享用",
+        "isBlockable": false
+      }
+    ]
+  },
+  {
+    "dishName": "可乐鸡翅",
+    "images": [],
+    "description": "可乐鸡翅是一道简单易做的家常菜，甜香可口，深受大家喜爱。",
+    "difficulty": 3,
+    "servings": "1盘",
+    "category": "荤菜",
+    "ingredients": {
+      "required": [
+        {"name": "鸡翅中", "amount": "10-12只"},
+        {"name": "可乐", "amount": "500ml"},
+        {"name": "白糖", "amount": "10克"},
+        {"name": "生抽", "amount": "15克"},
+        {"name": "老抽", "amount": "3克"},
+        {"name": "盐", "amount": "2克"},
+        {"name": "生姜", "amount": "2片"},
+        {"name": "料酒", "amount": "20毫升"},
+        {"name": "小葱", "amount": "挽成结"}
+      ],
+      "optional": []
+    },
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "鸡翅入锅，倒入冷水淹没。放生姜1片和料酒10-20毫升。大火煮开（大约2分钟）后，撇去浮沫，沥出水分",
+        "timeRequirement": {
+          "duration": "2分钟",
+          "type": "exact"
+        },
+        "heatLevel": "大火",
+        "targetCondition": "水煮开",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 2,
+        "description": "捞出鸡翅，可用刀将两边各划上两口改刀。生抽约10克腌制鸡翅10分钟（生抽能完全包裹鸡翅表面入味就行）",
+        "timeRequirement": {
+          "duration": "10分钟",
+          "type": "exact"
+        },
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 3,
+        "description": "锅重新小火起油，先将剩余姜片爆香，然后下入腌好的鸡翅。将鸡翅煎至金黄翻面（直到两面金黄），用炒菜勺子翻动一下鸡翅，与姜片一起翻炒4-5下（目的是防止鸡翅和姜片粘黏）",
+        "heatLevel": "小火",
+        "targetCondition": "两面金黄",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 4,
+        "description": "鸡翅金黄，倒入可乐没过鸡翅，开大火将锅中可乐煮沸，然后撇去漂浮的黑色浮沫（包含血水）。此时加入葱结",
+        "heatLevel": "大火",
+        "targetCondition": "可乐煮沸",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 5,
+        "description": "调味：加入食用盐2克，白糖10克，生抽3克调味（可以适当用老抽调底色，3克）",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 6,
+        "description": "等到葱结变黄，和姜片一起捞出，转中火继续慢煮可乐鸡翅",
+        "heatLevel": "中火",
+        "targetCondition": "葱结变黄",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 7,
+        "description": "等到可乐呈现挂丝状态，关小火让汁牢牢挂在鸡翅上。出锅，装盘",
+        "heatLevel": "小火",
+        "targetCondition": "可乐呈现挂丝状态",
+        "isBlockable": false
+      }
+    ]
+  },
+  {
+    "dishName": "回锅肉",
+    "images": ["dishes/meat_dish/回锅肉/1.jpeg", "dishes/meat_dish/回锅肉/2.jpeg"],
+    "description": "回锅肉是四川传统名菜，以其独特的麻辣鲜香而闻名。",
+    "difficulty": 4,
+    "servings": "1人份",
+    "category": "荤菜",
+    "ingredients": {
+      "required": [
+        {"name": "五花肉", "amount": "0.5斤/男人 0.3斤/女人"},
+        {"name": "小葱", "amount": "2棵"},
+        {"name": "生姜", "amount": "10-40g"},
+        {"name": "青红椒", "amount": "0-30g（根据受辣程度选择）"},
+        {"name": "蒜苗", "amount": "1把"},
+        {"name": "料酒", "amount": "5ml"},
+        {"name": "豆瓣酱", "amount": "10ml"},
+        {"name": "味精", "amount": "5g"},
+        {"name": "生抽", "amount": "5ml"}
+      ],
+      "optional": []
+    },
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "锅烧热，用手将五花肉紧紧压在锅上炙皮（这一步是为了处理猪皮上的汗腺）",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 2,
+        "description": "用钢丝球把皮刷干净，至黑色部分碳化部分被完全去除，不刷干净会有苦味",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 3,
+        "description": "将五花肉放入锅中，放入能淹没五花肉的冷水，放入生姜片、料酒和小葱（取2棵小葱打结）",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 4,
+        "description": "开大火煮，水开后撇去浮沫，继续煮15分钟，煮至瘦肉部分可以用筷子轻松刺穿",
+        "timeRequirement": {
+          "duration": "15分钟",
+          "type": "exact"
+        },
+        "heatLevel": "大火",
+        "targetCondition": "瘦肉部分可以用筷子轻松刺穿",
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 5,
+        "description": "青红椒切圈，蒜苗切段，生姜切小薄片，将5ml豆瓣酱和5ml生抽提前混合",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 6,
+        "description": "将煮熟的五花肉捞出放入冷水晾凉",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 7,
+        "description": "擦干五花肉的水，切成上肥下瘦的2mm的薄片（切厚了口感不好，而且很油）",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 8,
+        "description": "锅烧热，放入一层底油滑锅",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 9,
+        "description": "放入五花肉煸炒至肥肉透明，肉片微卷（欲称起灯盏窝）",
+        "targetCondition": "肥肉透明，肉片微卷",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 10,
+        "description": "倒入豆瓣生抽混合物，5g味精翻炒15秒",
+        "timeRequirement": {
+          "duration": "15秒",
+          "type": "exact"
+        },
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 11,
+        "description": "放入青红椒圈和小姜片，放入另5ml豆瓣酱翻炒30秒",
+        "timeRequirement": {
+          "duration": "30秒",
+          "type": "exact"
+        },
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 12,
+        "description": "放入蒜苗翻炒60秒",
+        "timeRequirement": {
+          "duration": "60秒",
+          "type": "exact"
+        },
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 13,
+        "description": "出锅",
+        "isBlockable": false
+      }
+    ]
+  },
+  {
+    "dishName": "水煮牛肉",
+    "images": ["dishes/meat_dish/水煮牛肉/sznr1.jpg", "dishes/meat_dish/水煮牛肉/sznr2.jpg", "dishes/meat_dish/水煮牛肉/sznr3.jpg", "dishes/meat_dish/水煮牛肉/sznr4.jpg", "dishes/meat_dish/水煮牛肉/sznr5.jpg", "dishes/meat_dish/水煮牛肉/sznr6.jpg", "dishes/meat_dish/水煮牛肉/sznr7.jpg", "dishes/meat_dish/水煮牛肉/sznr8.jpg", "dishes/meat_dish/水煮牛肉/sznr9.jpg", "dishes/meat_dish/水煮牛肉/sznr10.jpg", "dishes/meat_dish/水煮牛肉/sznr11.jpg", "dishes/meat_dish/水煮牛肉/sznr12.jpg"],
+    "description": "麻辣鲜香的水煮牛肉，是川菜中的经典代表。",
+    "difficulty": 3,
+    "servings": "2人份",
+    "category": "荤菜",
+    "ingredients": {
+      "required": [
+        {"name": "牛肉", "amount": "300g"},
+        {"name": "豆芽", "amount": "100g"},
+        {"name": "鸡蛋", "amount": "1个"},
+        {"name": "香菜", "amount": "5根"},
+        {"name": "豆瓣酱", "amount": "10g"},
+        {"name": "料酒", "amount": "10ml"},
+        {"name": "淀粉", "amount": "15g"},
+        {"name": "干辣椒粉", "amount": "5g"},
+        {"name": "姜", "amount": "20g"},
+        {"name": "蒜", "amount": "3瓣"},
+        {"name": "红辣椒", "amount": "1根"},
+        {"name": "蚝油", "amount": "8g"}
+      ],
+      "optional": []
+    },
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "牛肉洗干净切片",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 2,
+        "description": "加入15g姜丝，1个鸡蛋，15g淀粉，8g蚝油，10ml料酒搅拌均匀，腌制15分钟",
+        "timeRequirement": {
+          "duration": "15分钟",
+          "type": "exact"
+        },
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 3,
+        "description": "香菜洗干净切好",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 4,
+        "description": "锅里倒油，加入豆瓣酱，5g姜丝，蒜片",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 5,
+        "description": "倒入开水，煮成红汤",
+        "targetCondition": "煮成红汤",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 6,
+        "description": "豆芽洗干净去掉尾须，放进开水里焯熟",
+        "targetCondition": "焯熟",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 7,
+        "description": "将豆芽铺入碗底",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 8,
+        "description": "将牛肉片一片一片的放进红汤中，煮熟以后捞出",
+        "targetCondition": "煮熟",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 9,
+        "description": "将牛肉铺在豆芽上，撒上香菜梗",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 10,
+        "description": "撒上香菜叶，辣椒粉，辣椒圈",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 11,
+        "description": "另起锅烧热油，将热油淋在菜上面，就完成了",
+        "isBlockable": false
+      }
+    ]
+  },
+  {
+    "dishName": "鱼香肉丝",
+    "images": [],
+    "description": "鱼香肉丝是一道经典的川菜，酸甜微辣，口感丰富。",
+    "difficulty": 4,
+    "servings": "1-2人份",
+    "category": "荤菜",
+    "ingredients": {
+      "required": [
+        {"name": "里脊肉", "amount": "200g"},
+        {"name": "胡萝卜", "amount": "100g"},
+        {"name": "青椒", "amount": "100g"},
+        {"name": "木耳（干）", "amount": "5g"},
+        {"name": "生抽", "amount": "10ml"},
+        {"name": "料酒", "amount": "5ml"},
+        {"name": "蛋清", "amount": "1个"},
+        {"name": "淀粉", "amount": "10g"},
+        {"name": "醋", "amount": "15ml"},
+        {"name": "白糖", "amount": "10g"},
+        {"name": "盐", "amount": "5g"},
+        {"name": "姜", "amount": "20g"},
+        {"name": "葱", "amount": "20g"},
+        {"name": "蒜", "amount": "2瓣"},
+        {"name": "豆瓣酱", "amount": "15g"}
+      ],
+      "optional": []
+    },
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "制作腌料：将生抽5ml、料酒5ml、淀粉5g、水20ml、蛋清1个混合",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 2,
+        "description": "制作香汁：将生抽5ml、醋15ml、白糖10克、盐1克、淀粉5g、水20ml混合",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 3,
+        "description": "用腌料腌制里脊肉15-30分钟。注意将肉抓匀",
+        "timeRequirement": {
+          "duration": "15-30分钟",
+          "type": "range"
+        },
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 4,
+        "description": "干木耳泡4个小时，洗净，切成小块",
+        "timeRequirement": {
+          "duration": "4小时",
+          "type": "exact"
+        },
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 5,
+        "description": "青椒洗净，去蒂，切成丝。胡萝卜洗净，切成丝，将胡萝卜丝焯水",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 6,
+        "description": "姜、蒜切沫。葱切成5mm的小段",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 7,
+        "description": "将锅烧热，加入15ml油。向锅内倒入准备好的腌肉，快速滑散至变白，盛出备用",
+        "targetCondition": "变白",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 8,
+        "description": "将锅烧热，加入5ml油。倒入全部葱、姜、蒜、豆瓣酱",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 9,
+        "description": "倒入全部胡萝卜，翻炒20秒后，放入青椒和木耳，翻炒2分钟",
+        "timeRequirement": {
+          "duration": "20秒",
+          "type": "exact"
+        },
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 10,
+        "description": "倒入炒过的肉。快速翻炒均匀。注意不要炒超过20秒",
+        "timeRequirement": {
+          "duration": "20秒",
+          "type": "exact"
+        },
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 11,
+        "description": "倒入香汁。快速翻炒均匀。注意不要炒超过15秒",
+        "timeRequirement": {
+          "duration": "15秒",
+          "type": "exact"
+        },
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 12,
+        "description": "关火，盛盘",
+        "isBlockable": false
+      }
+    ]
+  },
+  {
+    "dishName": "黄焖鸡",
+    "images": [],
+    "description": "黄焖鸡是一道十分下饭的美食，食材平平无奇又十分容易烹制，一学就会。",
+    "difficulty": 3,
+    "servings": "1人份",
+    "category": "荤菜",
+    "ingredients": {
+      "required": [
+        {"name": "鸡腿", "amount": "两只"},
+        {"name": "香菇（干香菇最佳）", "amount": "5朵"},
+        {"name": "青椒", "amount": "两个"},
+        {"name": "生姜片", "amount": "两片"},
+        {"name": "干辣椒", "amount": "5-6个"},
+        {"name": "盐", "amount": "10g"},
+        {"name": "料酒", "amount": "10ml"},
+        {"name": "白胡椒粉", "amount": "5g"},
+        {"name": "白糖", "amount": "5g"},
+        {"name": "酱油", "amount": "5ml"}
+      ],
+      "optional": [
+        {"name": "土豆", "amount": "一个（可使汤汁更粘稠）"}
+      ]
+    },
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "鸡腿洗净，剁成4cm大小的块",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 2,
+        "description": "生姜切片、干辣椒切成小圈",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 3,
+        "description": "香菇切片，青椒切成细长的马蹄状，若为干香菇，洗净灰尘后泡一晚上并留香菇水备用",
+        "timeRequirement": {
+          "duration": "一晚上",
+          "type": "exact"
+        },
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 4,
+        "description": "若有土豆，切为与鸡肉大小类似的滚刀块",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 5,
+        "description": "炒糖色：锅里倒入底油，冷油时放入白糖（有一定难度，新手可跳至鸡肉炒制并使用老抽替代）",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 6,
+        "description": "小火慢慢加热，待油温逐渐升高，白糖开始融化并变成较深的棕色（期间要不断搅拌，防止糊锅）",
+        "heatLevel": "小火",
+        "targetCondition": "白糖开始融化并变成较深的棕色",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 7,
+        "description": "迅速倒入鸡块，转大火，快速翻炒！烹入料酒，继续翻炒片刻",
+        "heatLevel": "大火",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 8,
+        "description": "将生姜片和干辣椒倒入",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 9,
+        "description": "放入酱油，炒匀",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 10,
+        "description": "倒入香菇水或清水，以能淹住鸡肉为准",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 11,
+        "description": "倒入香菇片，白胡椒粉，盐，土豆",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 12,
+        "description": "翻炒均匀后，盖上锅盖焖煮，转中小火15-20分钟，有条件可以转至砂锅",
+        "timeRequirement": {
+          "duration": "15-20分钟",
+          "type": "range"
+        },
+        "heatLevel": "中小火",
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 13,
+        "description": "待鸡肉软烂，汤汁浓稠后（汤汁不要收的太干），最后放入青椒",
+        "targetCondition": "鸡肉软烂，汤汁浓稠",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 14,
+        "description": "放入味精，兜炒均匀后，关火！青椒基本断生即可，不要炒时间久了",
+        "targetCondition": "青椒基本断生",
+        "isBlockable": false
+      }
+    ]
+  },
+  {
+    "dishName": "小炒肉",
+    "images": [],
+    "description": "小炒肉是一道经典的湘菜，香辣下饭，制作简单。",
+    "difficulty": 3,
+    "servings": "1人份",
+    "category": "荤菜",
+    "ingredients": {
+      "required": [
+        {"name": "五花肉", "amount": "500g"},
+        {"name": "朝天椒", "amount": "4条"},
+        {"name": "小米椒", "amount": "4颗"},
+        {"name": "豆豉", "amount": "10g"},
+        {"name": "豆瓣酱", "amount": "10g"},
+        {"name": "老抽", "amount": "10ml"},
+        {"name": "淀粉", "amount": "10g"},
+        {"name": "盐", "amount": "1-2g"},
+        {"name": "葱", "amount": "0.5-1根"},
+        {"name": "蒜", "amount": "2瓣"},
+        {"name": "食用油", "amount": "15ml"}
+      ],
+      "optional": []
+    },
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "五花肉切片",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 2,
+        "description": "把肉放入器皿内，加入淀粉、老抽、盐搅拌腌制半小时",
+        "timeRequirement": {
+          "duration": "半小时",
+          "type": "exact"
+        },
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 3,
+        "description": "葱切段，小米椒、朝天椒斜刀切好",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 4,
+        "description": "热锅、倒油",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 5,
+        "description": "油热后加入五花肉煸炒。炒至变色后盛出来",
+        "targetCondition": "变色",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 6,
+        "description": "向锅中加蒜，煸出香味，加入豆豉，翻炒均匀",
+        "targetCondition": "煸出香味",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 7,
+        "description": "加入豆瓣酱翻炒均匀",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 8,
+        "description": "加入炒好的五花肉继续的翻炒均匀",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 9,
+        "description": "加入小米椒、朝天椒、葱段翻炒40秒",
+        "timeRequirement": {
+          "duration": "40秒",
+          "type": "exact"
+        },
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 10,
+        "description": "出锅",
+        "isBlockable": false
+      }
+    ]
+  },
+  {
+    "dishName": "孜然牛肉",
+    "images": [],
+    "description": "孜然牛肉是一道香辣下饭的经典菜品，孜然香味浓郁。",
+    "difficulty": 3,
+    "servings": "1人份",
+    "category": "荤菜",
+    "ingredients": {
+      "required": [
+        {"name": "牛柳或牛肩肉", "amount": "250g"},
+        {"name": "青椒", "amount": "2颗（每颗100g）"},
+        {"name": "孜然（颗粒>粉）", "amount": "20g"},
+        {"name": "小米椒", "amount": "3颗（每颗5g）"},
+        {"name": "生抽酱油", "amount": "20ml"},
+        {"name": "淀粉", "amount": "10g"},
+        {"name": "油", "amount": "15ml"},
+        {"name": "盐", "amount": "3g"},
+        {"name": "葱", "amount": "1根（20g）"}
+      ],
+      "optional": []
+    },
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "首先将小米椒切碎，和孜然粒一起放入捣药罐捣碎成颗粒，这样更入味。如果时间紧张可跳过捣碎步骤",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 2,
+        "description": "青椒切头去籽（喜欢辣的可不去），切成丝。葱切段",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 3,
+        "description": "牛肉提前解冻，过一边水洗干净，晾干或用厨用纸吸干，将牛肉顺着纹理切成片",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 4,
+        "description": "然后进行腌肉，加入生抽，淀粉，油，均匀搅拌，静止30分钟",
+        "timeRequirement": {
+          "duration": "30分钟",
+          "type": "exact"
+        },
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 5,
+        "description": "热锅下油，放入葱，爆出香味后放入腌好的牛肉煸炒",
+        "targetCondition": "爆出香味",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 6,
+        "description": "牛肉变色后均匀放入孜然辣椒颗粒并炒熟",
+        "targetCondition": "牛肉变色",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 7,
+        "description": "然后下入青椒丝，断生后放盐",
+        "targetCondition": "断生",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 8,
+        "description": "大火炒1分钟后关火再翻炒30秒保证受热均匀即可出锅",
+        "timeRequirement": {
+          "duration": "1分钟",
+          "type": "exact"
+        },
+        "heatLevel": "大火",
+        "isBlockable": false
+      }
+    ]
+  },
+  {
+    "dishName": "辣椒炒肉",
+    "images": [],
+    "description": "辣椒炒肉是一道经典的湘菜，香辣下饭，需要一定料理基础。",
+    "difficulty": 3,
+    "servings": "1人份",
+    "category": "荤菜",
+    "ingredients": {
+      "required": [
+        {"name": "青椒（推荐杭椒、螺丝椒）", "amount": "3个"},
+        {"name": "猪瘦肉", "amount": "200g"},
+        {"name": "盐", "amount": "3g"},
+        {"name": "生抽", "amount": "3ml"},
+        {"name": "蚝油", "amount": "3ml"},
+        {"name": "大蒜", "amount": "5g"},
+        {"name": "姜", "amount": "5g"},
+        {"name": "油", "amount": "8ml"}
+      ],
+      "optional": [
+        {"name": "酱油", "amount": "2ml"},
+        {"name": "豆豉", "amount": "3g"}
+      ]
+    },
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "将青椒洗净，去除青椒把以及青椒籽，再用滚刀手法切好备用",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 2,
+        "description": "大蒜用刀拍一下，再横切成蒜瓣，生姜切碎成姜末",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 3,
+        "description": "将猪瘦肉切成肉片（顺着猪肉的纹理切，即刀和肉的纹理呈水平线，出来的肉片，纹路呈川字）",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 4,
+        "description": "将切好的猪肉洗净，放入空碗，再加入计算好的生抽、蚝油、盐搅拌均匀，腌制10分钟",
+        "timeRequirement": {
+          "duration": "10分钟",
+          "type": "exact"
+        },
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 5,
+        "description": "热锅，不用倒油，把切好的青椒放入锅中，大火干煸至虎皮状后，再加2g盐继续翻炒1分钟后捞起",
+        "timeRequirement": {
+          "duration": "1分钟",
+          "type": "exact"
+        },
+        "heatLevel": "大火",
+        "targetCondition": "虎皮状",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 6,
+        "description": "不用洗锅，大火热锅，加入8ml油，等待30秒，加入蒜瓣、姜末翻炒15秒",
+        "timeRequirement": {
+          "duration": "30秒",
+          "type": "exact"
+        },
+        "heatLevel": "大火",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 7,
+        "description": "加入腌制好的猪肉倒入锅内翻炒2分钟，再加入干煸过的青椒翻炒1分钟",
+        "timeRequirement": {
+          "duration": "2分钟",
+          "type": "exact"
+        },
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 8,
+        "description": "根据个人口味喜好加入豆豉，最后加入酱油，继续翻炒30秒",
+        "timeRequirement": {
+          "duration": "30秒",
+          "type": "exact"
+        },
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 9,
+        "description": "出锅，盛盘",
+        "isBlockable": false
+      }
+    ]
+  },
+  {
+    "dishName": "麻婆豆腐",
+    "images": ["dishes/meat_dish/麻婆豆腐/1.jpeg"],
+    "description": "这是参考麻婆豆腐创作的一道菜。富含有铁、钙、磷、镁等人体必需的多种微量元素，最重要的是非常下饭哦～",
+    "difficulty": 3,
+    "servings": "1人份",
+    "category": "荤菜",
+    "ingredients": {
+      "required": [
+        {"name": "内脂豆腐（推荐清美）", "amount": "1盒"},
+        {"name": "咸鸭蛋（推荐留夫鸭的）", "amount": "1枚"},
+        {"name": "五花肉", "amount": "20-30g"},
+        {"name": "大蒜", "amount": "两瓣"},
+        {"name": "生姜", "amount": "2片"},
+        {"name": "小米椒", "amount": "5根"},
+        {"name": "香辣酱（推荐广乐的）", "amount": "5g"},
+        {"name": "花椒", "amount": "20颗"},
+        {"name": "食盐", "amount": "3g"},
+        {"name": "酱油（味极鲜酱油）", "amount": "10g"}
+      ],
+      "optional": []
+    },
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "大蒜和生姜切碎，备用",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 2,
+        "description": "小米辣切成辣椒圈，备用",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 3,
+        "description": "五花肉切成肉糜（本来就是买的肉糜的跳过）",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 4,
+        "description": "肉糜中加入一半的食盐和味极鲜酱油，搅拌均匀，备用",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 5,
+        "description": "鸭蛋用菜刀竖着对半切开（注意安全），去除蛋黄（一定要去除，不然会腥），剩下的蛋白捣碎成大约2mm*2mm大小，不用太碎，备用",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 6,
+        "description": "打开豆腐包装，用水果刀将在盒子中的豆腐划成大约2.5cm*3cm大小，备用",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 7,
+        "description": "热锅，锅内放入10ml-15ml食用油。等待10秒让油温升高",
+        "timeRequirement": {
+          "duration": "10秒",
+          "type": "exact"
+        },
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 8,
+        "description": "调成小火，放入大蒜、生姜、辣椒圈、花椒、咸鸭蛋、蒜蓉辣酱翻炒20秒，炒出香味",
+        "timeRequirement": {
+          "duration": "20秒",
+          "type": "exact"
+        },
+        "heatLevel": "小火",
+        "targetCondition": "炒出香味",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 9,
+        "description": "调成中火，放入肉糜，翻炒大约1分钟，肉炒变色",
+        "timeRequirement": {
+          "duration": "1分钟",
+          "type": "exact"
+        },
+        "heatLevel": "中火",
+        "targetCondition": "肉炒变色",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 10,
+        "description": "调成小火，放入豆腐，将剩下的食盐、味极鲜酱油酱油均匀的洒在豆腐上",
+        "heatLevel": "小火",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 11,
+        "description": "从锅边倒入开水（不然豆腐容易破），没过豆腐即可",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 12,
+        "description": "开大火，水沸腾后立马转入中火，等待大约10分钟",
+        "timeRequirement": {
+          "duration": "10分钟",
+          "type": "exact"
+        },
+        "heatLevel": "大火转中火",
+        "targetCondition": "水沸腾",
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 13,
+        "description": "等到水只剩1/5并且豆腐表面已经入色，关火，盛盘",
+        "targetCondition": "水只剩1/5并且豆腐表面已经入色",
+        "isBlockable": false
+      }
+    ]
+  },
+  {
+    "dishName": "鱼香茄子",
+    "images": ["dishes/meat_dish/鱼香茄子/yxqz1.jpg", "dishes/meat_dish/鱼香茄子/yxqz2.jpg", "dishes/meat_dish/鱼香茄子/yxqz3.jpg", "dishes/meat_dish/鱼香茄子/yxqz4.jpg", "dishes/meat_dish/鱼香茄子/yxqz5.jpg", "dishes/meat_dish/鱼香茄子/yxqz6.jpg", "dishes/meat_dish/鱼香茄子/yxqz7.jpg"],
+    "description": "这个菜真的超级下饭，当个干饭王吧。",
+    "difficulty": 3,
+    "servings": "1人份",
+    "category": "荤菜",
+    "ingredients": {
+      "required": [
+        {"name": "茄子", "amount": "2根"},
+        {"name": "肉末", "amount": "20g"},
+        {"name": "盐", "amount": "3-5g"},
+        {"name": "糖", "amount": "5-10g"},
+        {"name": "味精", "amount": "5g"},
+        {"name": "生抽", "amount": "10ml"},
+        {"name": "老抽", "amount": "5ml"},
+        {"name": "醋", "amount": "10ml"},
+        {"name": "水淀粉", "amount": "100ml"},
+        {"name": "豆瓣酱", "amount": "20-30g"},
+        {"name": "小葱、姜、蒜、小米辣", "amount": "根据自己口味"}
+      ],
+      "optional": []
+    },
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "将茄子切成条",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 2,
+        "description": "将肉切成肉沫，葱姜蒜切碎、小米椒切丁",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 3,
+        "description": "调鱼香汁：碗中放入盐、味精、糖、生抽、老抽、醋、水淀粉搅拌均匀",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 4,
+        "description": "锅中倒入300ml油，开小火（小火容易掌控），等油温七成热（小火大约40秒，有烟冒出）放入茄子炸两分钟，当茄子边缘微黄就捞出",
+        "timeRequirement": {
+          "duration": "40秒",
+          "type": "exact"
+        },
+        "heatLevel": "小火",
+        "targetCondition": "油温七成热（有烟冒出）",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 5,
+        "description": "锅中留15-30ml油，倒入肉沫炒至颜色变白就盛出来",
+        "targetCondition": "颜色变白",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 6,
+        "description": "锅中倒入15-30ml油，放入豆瓣酱、葱白、姜、蒜炒香，然后倒入肉沫翻炒均匀",
+        "targetCondition": "炒香",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 7,
+        "description": "加入80-150ml清水（水面预计茄子八成高度为准），倒入茄子、倒入料汁，爆炒入味收汁。最后放入葱翻炒均匀，就可以起锅了",
+        "targetCondition": "入味收汁",
+        "isBlockable": false
+      }
+    ]
+  },
+  {
+    "dishName": "蚂蚁上树",
+    "images": [],
+    "description": "蚂蚁上树是一道经典的川菜，主要材料为粉丝和肉末。它咸香微辣、入味透彻，粉丝软滑爽口，肉末细嫩鲜香。全程只需20分钟，是非常适合家庭操作的一道菜。",
+    "difficulty": 3,
+    "servings": "2人份",
+    "category": "荤菜",
+    "ingredients": {
+      "required": [
+        {"name": "红薯粉丝", "amount": "80g（干重）"},
+        {"name": "猪肉末（或牛肉末）", "amount": "150g"},
+        {"name": "郫县豆瓣酱", "amount": "15g"},
+        {"name": "生抽", "amount": "10ml"},
+        {"name": "老抽", "amount": "5ml"},
+        {"name": "食用油", "amount": "10ml"},
+        {"name": "蒜末", "amount": "10g"},
+        {"name": "姜末", "amount": "5g"},
+        {"name": "清水", "amount": "300ml（用于煮粉丝）"}
+      ],
+      "optional": [
+        {"name": "小葱", "amount": "适量"}
+      ]
+    },
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "红薯粉丝提前泡软，泡水时间为20分钟，备用",
+        "timeRequirement": {
+          "duration": "20分钟",
+          "type": "exact"
+        },
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 2,
+        "description": "将蒜、姜分别剁碎，备用",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 3,
+        "description": "锅烧热，加入10ml食用油，加入蒜末、姜末炒香",
+        "targetCondition": "炒香",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 4,
+        "description": "加入猪肉末翻炒至肉色发白且微微出油",
+        "targetCondition": "肉色发白且微微出油",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 5,
+        "description": "加入郫县豆瓣酱，炒至红油析出",
+        "targetCondition": "红油析出",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 6,
+        "description": "加入生抽和老抽，翻炒均匀",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 7,
+        "description": "倒入300ml清水，煮沸",
+        "targetCondition": "煮沸",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 8,
+        "description": "放入泡软沥干的粉丝，用筷子轻轻拨动防止粘连",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 9,
+        "description": "中小火煮约5分钟，直至粉丝完全吸收汤汁、呈现微微收干状态",
+        "timeRequirement": {
+          "duration": "5分钟",
+          "type": "exact"
+        },
+        "heatLevel": "中小火",
+        "targetCondition": "粉丝完全吸收汤汁、呈现微微收干状态",
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 10,
+        "description": "依据口味可撒入小葱末，关火装盘",
+        "isBlockable": false
+      }
+    ]
+  },
+  {
+    "dishName": "蒜苔炒肉末",
+    "images": [],
+    "description": "蒜苔炒肉末是一道简单易做的菜。这是一道北方家常菜，以做法简单、味道上乘的特点，在广大北方人民群众中备受喜爱。",
+    "difficulty": 2,
+    "servings": "1人份",
+    "category": "荤菜",
+    "ingredients": {
+      "required": [
+        {"name": "蒜苔", "amount": "1扎（约190g）"},
+        {"name": "五花肉薄片", "amount": "4片（约20g）"},
+        {"name": "食用油", "amount": "10ml"},
+        {"name": "蒜瓣", "amount": "2瓣"},
+        {"name": "生抽", "amount": "15ml"},
+        {"name": "食盐", "amount": "2g"}
+      ],
+      "optional": []
+    },
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "蒜苔切成5cm小段，备用",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 2,
+        "description": "五花肉切成5mm*5cm丝状，备用",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 3,
+        "description": "蒜瓣拍碎切成末，备用",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 4,
+        "description": "热锅，锅内放入10ml食用油。等待10秒让油温升高",
+        "timeRequirement": {
+          "duration": "10秒",
+          "type": "exact"
+        },
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 5,
+        "description": "放入蒜末，中火翻炒10秒将蒜末炒出香味",
+        "timeRequirement": {
+          "duration": "10秒",
+          "type": "exact"
+        },
+        "heatLevel": "中火",
+        "targetCondition": "炒出香味",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 6,
+        "description": "放入五花肉和5ml生抽，中火翻炒30秒将肉炒熟并上色",
+        "timeRequirement": {
+          "duration": "30秒",
+          "type": "exact"
+        },
+        "heatLevel": "中火",
+        "targetCondition": "肉炒熟并上色",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 7,
+        "description": "将蒜苔放入锅内并加入10ml生抽，翻炒30秒",
+        "timeRequirement": {
+          "duration": "30秒",
+          "type": "exact"
+        },
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 8,
+        "description": "锅内加入20g水，中火翻炒5分钟将蒜苔炒至稍稍变软",
+        "timeRequirement": {
+          "duration": "5分钟",
+          "type": "exact"
+        },
+        "heatLevel": "中火",
+        "targetCondition": "蒜苔炒至稍稍变软",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 9,
+        "description": "最后加入2g食盐，中火翻炒30秒，即可出锅装盘",
+        "timeRequirement": {
+          "duration": "30秒",
+          "type": "exact"
+        },
+        "heatLevel": "中火",
+        "isBlockable": false
+      }
+    ]
+  },
+  {
+    "dishName": "香干肉丝",
+    "images": [],
+    "description": "香干肉丝是一道经典的家常菜，口感丰富，营养均衡。",
+    "difficulty": 3,
+    "servings": "1人份",
+    "category": "荤菜",
+    "ingredients": {
+      "required": [
+        {"name": "猪里脊（可以买超市切好且称重好的肉丝）", "amount": "100g"},
+        {"name": "香干", "amount": "75g"},
+        {"name": "青椒", "amount": "5个"},
+        {"name": "盐", "amount": "3g"},
+        {"name": "生抽", "amount": "5ml"},
+        {"name": "淀粉", "amount": "5g"},
+        {"name": "大蒜", "amount": "5g（大约3个蒜瓣）"},
+        {"name": "鸡精", "amount": "2g"}
+      ],
+      "optional": []
+    },
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "肉丝（没有肉丝，自己切）用生抽(3ml)，生粉混合均匀待用",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 2,
+        "description": "将青椒洗净，再用滚刀手法切好备用",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 3,
+        "description": "大蒜横切成片，香干切丝",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 4,
+        "description": "淀粉与水(10ml)混合，搅拌均匀",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 5,
+        "description": "干净锅15ml油，不用等油热就倒入肉丝慢慢划散，肉丝熟了，立马捞出，留油到锅里",
+        "targetCondition": "肉丝熟了",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 6,
+        "description": "将蒜片和香干放入锅中，加入2ml生抽，翻炒均匀",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 7,
+        "description": "2-3分钟，看火大小，将青椒丝放入锅中混合，翻炒",
+        "timeRequirement": {
+          "duration": "2-3分钟",
+          "type": "range"
+        },
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 8,
+        "description": "1分钟后，放入肉丝混合",
+        "timeRequirement": {
+          "duration": "1分钟",
+          "type": "exact"
+        },
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 9,
+        "description": "倒入淀粉与水的混合物勾芡，加入盐3g，鸡精2g，翻炒2-3分钟出锅",
+        "timeRequirement": {
+          "duration": "2-3分钟",
+          "type": "range"
+        },
+        "isBlockable": false
+      }
+    ]
+  },
+  {
+    "dishName": "完美水煮蛋",
+    "images": [],
+    "description": "科学家研发的循环水煮法，可同时达到蛋黄绵密、蛋白均匀凝固且保留最多营养素的效果。需精准控制温度与时间，难度较高。",
+    "difficulty": 5,
+    "servings": "1人份",
+    "category": "早餐",
+    "ingredients": {
+      "required": [
+        {"name": "新鲜鸡蛋（推荐AA级）", "amount": "1个（约60g）"},
+        {"name": "100°C沸水", "amount": "1500ml"},
+        {"name": "30°C温水", "amount": "1500ml"}
+      ],
+      "optional": []
+    },
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "准备两锅水：A锅维持100°C沸水，B锅维持30°C温水",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 2,
+        "description": "用漏勺将鸡蛋放入A锅，启动定时器",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 3,
+        "description": "精准每2分钟将鸡蛋转移至另一锅水",
+        "timeRequirement": {
+          "duration": "2分钟",
+          "type": "exact"
+        },
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 4,
+        "description": "重复转移操作共16次（总时长32分钟）",
+        "timeRequirement": {
+          "duration": "32分钟",
+          "type": "exact"
+        },
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 5,
+        "description": "最后一次转移后，在B锅静置30秒",
+        "timeRequirement": {
+          "duration": "30秒",
+          "type": "exact"
+        },
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 6,
+        "description": "立即放入冰水（0摄氏度）终止加热（维持30秒）",
+        "timeRequirement": {
+          "duration": "30秒",
+          "type": "exact"
+        },
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 7,
+        "description": "剥壳时从钝端气室处开始，沿纵轴剥离蛋膜",
+        "isBlockable": false
+      }
+    ]
+  },
+  {
+    "dishName": "紫菜蛋花汤",
+    "images": [],
+    "description": "紫菜蛋花汤是一道简单易做的家常汤品，营养丰富，口感清爽。",
+    "difficulty": 2,
+    "servings": "1人份",
+    "category": "汤与粥",
+    "ingredients": {
+      "required": [
+        {"name": "干紫菜", "amount": "10g"},
+        {"name": "鸡蛋", "amount": "两个"},
+        {"name": "盐", "amount": "2克"},
+        {"name": "油", "amount": "5ml"},
+        {"name": "清水", "amount": "1.5升"}
+      ],
+      "optional": [
+        {"name": "葱花", "amount": "适量"},
+        {"name": "香油", "amount": "几滴"},
+        {"name": "虾皮", "amount": "一点"}
+      ]
+    },
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "干紫菜用清水泡15分钟，捞起沥干水份备用",
+        "timeRequirement": {
+          "duration": "15分钟",
+          "type": "exact"
+        },
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 2,
+        "description": "热锅，倒入1.5升清水、5ml油、2g盐。待水开后放入紫菜",
+        "targetCondition": "水开",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 3,
+        "description": "紫菜烧开后3分钟，将打好的蛋液徐徐倒入锅内，30秒既可起锅",
+        "timeRequirement": {
+          "duration": "3分钟",
+          "type": "exact"
+        },
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 4,
+        "description": "撒上葱花，转小火20秒",
+        "timeRequirement": {
+          "duration": "20秒",
+          "type": "exact"
+        },
+        "heatLevel": "小火",
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 5,
+        "description": "关火，出锅前放入几滴香油，也有的会放入一点虾皮，味道也不错",
+        "isBlockable": false
+      }
+    ]
+  },
+  {
+    "dishName": "红烧猪蹄",
+    "images": ["dishes/meat_dish/红烧猪蹄/红烧猪蹄.jpg"],
+    "description": "红烧猪蹄营养丰富，味道香，汤汁浓郁、下饭强。",
+    "difficulty": 4,
+    "servings": "3-4人份",
+    "category": "荤菜",
+    "ingredients": {
+      "required": [
+        {"name": "猪蹄", "amount": "2-3根"},
+        {"name": "食用油", "amount": "30ml"},
+        {"name": "香叶", "amount": "2片"},
+        {"name": "姜", "amount": "5片"},
+        {"name": "葱", "amount": "半根"},
+        {"name": "桂皮", "amount": "1块"},
+        {"name": "冰糖", "amount": "7-8粒"},
+        {"name": "料酒", "amount": "30ml"},
+        {"name": "生抽", "amount": "20ml"},
+        {"name": "老抽", "amount": "20ml"},
+        {"name": "盐", "amount": "8克"},
+        {"name": "八角", "amount": "4个"}
+      ],
+      "optional": []
+    },
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "冷水锅中放入热心摊主剁好的猪蹄，加入20ml料酒与葱姜，煮15分钟去掉血腥",
+        "timeRequirement": {
+          "duration": "15分钟",
+          "type": "exact"
+        },
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 2,
+        "description": "热锅冷油，倒入30ml食用油，放入7-8粒冰糖，开小火，熬成糖色，期间用锅铲把冰糖压碎，大概熬2分钟",
+        "timeRequirement": {
+          "duration": "2分钟",
+          "type": "exact"
+        },
+        "heatLevel": "小火",
+        "targetCondition": "熬成糖色",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 3,
+        "description": "熬成糖色后，放入焯过水的猪蹄，继续小火，翻炒猪蹄，直至所有猪蹄两面微黄",
+        "heatLevel": "小火",
+        "targetCondition": "两面微黄",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 4,
+        "description": "加入香叶2片、桂皮1块、八角4个、生抽20ml、老抽20ml、料酒10ml、姜3片、盐8克，转中火、继续翻炒1分钟",
+        "timeRequirement": {
+          "duration": "1分钟",
+          "type": "exact"
+        },
+        "heatLevel": "中火",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 5,
+        "description": "加入开水或者冷水，水需要没过猪蹄，盖上锅盖，大火烧开，烧开之后关火",
+        "heatLevel": "大火",
+        "targetCondition": "烧开",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 6,
+        "description": "把锅内的食材全部倒入高压锅中，高压锅中需要15分钟（如果同学没有高压锅，可放在锅中大火转小火熬制即可）",
+        "timeRequirement": {
+          "duration": "15分钟",
+          "type": "exact"
+        },
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 7,
+        "description": "15分钟之后，把高压锅的食材倒入炒锅中，开大火收汁，此时可用筷子尝下味道、淡的话可以加2-3g盐",
+        "heatLevel": "大火",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 8,
+        "description": "大火收汁时长根据锅中的水来算，一般30秒即可，多留点也无碍、红烧猪蹄汤也是很下饭的",
+        "timeRequirement": {
+          "duration": "30秒",
+          "type": "exact"
+        },
+        "isBlockable": false
+      }
+    ]
+  },
+  {
+    "dishName": "糖醋里脊",
+    "images": [],
+    "description": "糖醋里脊是中国经典传统名菜之一，该菜品以猪里脊肉为主材，配以面粉、淀粉、醋等佐料，酸甜可口，让人食欲大开。",
+    "difficulty": 4,
+    "servings": "1人份",
+    "category": "荤菜",
+    "ingredients": {
+      "required": [
+        {"name": "里脊肉", "amount": "500g"},
+        {"name": "醋", "amount": "10g"},
+        {"name": "白糖", "amount": "30g"},
+        {"name": "淀粉", "amount": "50g"},
+        {"name": "鸡蛋", "amount": "50g"},
+        {"name": "生抽", "amount": "10ml"},
+        {"name": "料酒", "amount": "20g"},
+        {"name": "蚝油", "amount": "10g"},
+        {"name": "番茄酱", "amount": "30ml"},
+        {"name": "白胡椒粉", "amount": "5g"},
+        {"name": "食盐", "amount": "10g"}
+      ],
+      "optional": []
+    },
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "腌肉：将猪里脊肉先切厚片，用刀背拍一拍，把肉拍松一点。切成一个手指头粗的条，加料酒，生抽，蚝油，食盐，白胡椒粉，一个鸡蛋，将肉用手抓匀，腌制20分钟以上",
+        "timeRequirement": {
+          "duration": "20分钟",
+          "type": "exact"
+        },
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 2,
+        "description": "调酱：番茄酱+10g醋+30g白糖+150ml清水，搅拌至糖融化，备用",
+        "targetCondition": "糖融化",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 3,
+        "description": "裹粉：先把粉全部裹好再来炸，这样在炸的时候就不会手忙脚乱。准备一个大碗，里面放淀粉，把每一根肉条都满满裹上淀粉",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 4,
+        "description": "炸制：油温160摄氏度下里脊，可以拿一个干筷子放在油里面试一下，周围冒小泡就可以下锅",
+        "targetCondition": "周围冒小泡",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 5,
+        "description": "炸到表面微黄可以捞出，全程中火。然后等油温升高到200摄氏度，把里脊倒进去重新炸一次，只需40秒，表皮就会很脆，马上捞出",
+        "timeRequirement": {
+          "duration": "40秒",
+          "type": "exact"
+        },
+        "targetCondition": "表面微黄",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 6,
+        "description": "裹酱：另外拿一个锅，锅里放底油，把调好的酱汁倒进去，煮到冒泡，把炸好的里脊放进去，翻炒，让每一根都裹上酱汁",
+        "targetCondition": "煮到冒泡",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 7,
+        "description": "下炸好的里脊肉翻炒，关火盛出",
+        "isBlockable": false
+      }
+    ]
+  },
+  {
+    "dishName": "粉蒸肉",
+    "images": [],
+    "description": "粉蒸肉是一道经典的中式蒸菜，香味浓郁，口感软糯，营养丰富。适合家庭聚餐或节日宴客。此菜适合有一定烹饪经验的人士制作，预计从准备到完成约需90分钟。",
+    "difficulty": 4,
+    "servings": "3人份",
+    "category": "荤菜",
+    "ingredients": {
+      "required": [
+        {"name": "五花肉", "amount": "250g"},
+        {"name": "蒸肉米粉", "amount": "50g"},
+        {"name": "生抽", "amount": "7.5ml"},
+        {"name": "老抽", "amount": "5ml"},
+        {"name": "料酒", "amount": "7.5ml"},
+        {"name": "郫县豆瓣酱", "amount": "5g"},
+        {"name": "姜末", "amount": "5g"},
+        {"name": "蒜末", "amount": "5g"},
+        {"name": "白砂糖", "amount": "2.5g"},
+        {"name": "土豆或南瓜", "amount": "150g"}
+      ],
+      "optional": []
+    },
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "将五花肉洗净，切成长约5cm、宽约3cm、厚度约0.5cm的肉片",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 2,
+        "description": "将姜、蒜切成颗粒直径不大于1mm的细末",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 3,
+        "description": "取一大碗，放入切好的五花肉、7.5ml生抽、5ml老抽、7.5ml料酒、5g郫县豆瓣酱、5g姜末、5g蒜末、2.5g白砂糖",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 4,
+        "description": "用筷子搅拌均匀后，盖上保鲜膜，室温(20°C-25°C)静置腌制30分钟",
+        "timeRequirement": {
+          "duration": "30分钟",
+          "type": "exact"
+        },
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 5,
+        "description": "腌制完成后，加入50g蒸肉米粉，继续翻拌2分钟，确保每片肉都均匀裹粉",
+        "timeRequirement": {
+          "duration": "2分钟",
+          "type": "exact"
+        },
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 6,
+        "description": "土豆去皮，切片厚度控制在0.8cm，片面积约为5cm x 5cm，重量控制在150g",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 7,
+        "description": "在直径20cm的深碗底部铺满土豆片，尽量无重叠",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 8,
+        "description": "将拌好粉的五花肉均匀铺在土豆片上，压实",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 9,
+        "description": "蒸锅中加入1000ml清水，开火加热至水面持续冒泡(100°C)",
+        "targetCondition": "水面持续冒泡(100°C)",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 10,
+        "description": "将装好食材的碗放入蒸锅内，盖好锅盖",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 11,
+        "description": "保持中火蒸60分钟（火力保持在可持续沸腾的程度，约600W热功率）",
+        "timeRequirement": {
+          "duration": "60分钟",
+          "type": "exact"
+        },
+        "heatLevel": "中火",
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 12,
+        "description": "时间结束后，用筷子插入肉块中央，若能轻松穿透并无明显阻力，则表明蒸熟",
+        "targetCondition": "轻松穿透并无明显阻力",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 13,
+        "description": "若未达到此状态，则继续加热10-15分钟，直至肉质软烂，油脂渗出",
+        "timeRequirement": {
+          "duration": "10-15分钟",
+          "type": "range"
+        },
+        "targetCondition": "肉质软烂，油脂渗出",
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 14,
+        "description": "取出盛盘，即可食用",
+        "isBlockable": false
+      }
+    ]
+  },
+  {
+    "dishName": "南派红烧肉",
+    "images": [],
+    "description": "这份红烧肉教程是一道新手不败的菜谱。配着米饭好吃的停不下来，香糯无敌棒色泽诱人肥而不腻",
+    "difficulty": 4,
+    "servings": "1-3人份",
+    "category": "荤菜",
+    "ingredients": {
+      "required": [
+        {"name": "猪五花肉", "amount": "约2斤"},
+        {"name": "油", "amount": "100-150ml"},
+        {"name": "姜", "amount": "6片"},
+        {"name": "冰糖", "amount": "约15块"},
+        {"name": "白砂糖", "amount": "30g"},
+        {"name": "老抽", "amount": "15ml"},
+        {"name": "料酒", "amount": "20ml"},
+        {"name": "凉水", "amount": "没过食材的量"},
+        {"name": "开水", "amount": "没过食材的量"},
+        {"name": "香叶", "amount": "4片"},
+        {"name": "八角", "amount": "3个"},
+        {"name": "盐", "amount": "2-3g"},
+        {"name": "花椒", "amount": "10g"}
+      ],
+      "optional": []
+    },
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "猪五花肉切大块（约4.5cm）",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 2,
+        "description": "生姜切片（每片厚度约3mm）",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 3,
+        "description": "开水烧开",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 4,
+        "description": "小葱白色的部分葱白切成小段（小葱最佳，大葱也可以）",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 5,
+        "description": "蒜中间切开，不要拍扁，否则难以捞出以至最后收汁时影响味道",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 6,
+        "description": "建议先拿出来一半葱姜，再将剩下的生姜、葱白、蒜、花椒、八角、香叶提前放入一个碗中备用",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 7,
+        "description": "凉水锅中放入切好的五花肉，加入料酒与2/5葱姜，煮15分钟去掉血腥，捞出来后洗干净",
+        "timeRequirement": {
+          "duration": "15分钟",
+          "type": "exact"
+        },
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 8,
+        "description": "炒糖色，注意采用其中提到的操作2来制作糖色",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 9,
+        "description": "将准备好的生姜、葱白、蒜、花椒、八角、香叶还有五花肉倒入锅中大火翻炒，期间加入至闻到香味，倒入开水至没过全部肉炖煮50分钟-60分钟",
+        "timeRequirement": {
+          "duration": "50-60分钟",
+          "type": "range"
+        },
+        "heatLevel": "大火",
+        "targetCondition": "闻到香味",
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 10,
+        "description": "加入10ml料酒",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 11,
+        "description": "盖上锅盖煮至沸腾后，每隔25分钟打开盖子将浮在表面的油和沫捞出",
+        "timeRequirement": {
+          "duration": "25分钟",
+          "type": "exact"
+        },
+        "targetCondition": "煮至沸腾",
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 12,
+        "description": "当水的高度减至肉最高的高度与锅底高度的3/5时，转中火，并捞出除肉和水以外的所有辅料，开始收汁",
+        "heatLevel": "中火",
+        "targetCondition": "水的高度减至肉最高的高度与锅底高度的3/5",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 13,
+        "description": "打开锅盖，待汤汁快没有的时粘稠状出锅（切记不可收干）",
+        "targetCondition": "汤汁快没有的时粘稠状",
+        "isBlockable": false
+      }
+    ]
+  },
+  {
+    "dishName": "梅菜扣肉",
+    "images": ["dishes/meat_dish/梅菜扣肉/1.jpeg", "dishes/meat_dish/梅菜扣肉/2.jpeg", "dishes/meat_dish/梅菜扣肉/3.jpeg", "dishes/meat_dish/梅菜扣肉/4.jpeg"],
+    "description": "梅菜扣肉造型别致、大方得体，颜色酱红油亮，汤汁黏稠鲜美，扣肉肥而不腻，食之软烂醇香。",
+    "difficulty": 4,
+    "servings": "1人份",
+    "category": "荤菜",
+    "ingredients": {
+      "required": [
+        {"name": "五花肉", "amount": "200g"},
+        {"name": "梅菜", "amount": "30g"},
+        {"name": "五香粉", "amount": "2g"},
+        {"name": "食用油", "amount": "300ml"},
+        {"name": "白砂糖", "amount": "5g"},
+        {"name": "老抽", "amount": "30ml"},
+        {"name": "生抽", "amount": "20ml"},
+        {"name": "小米椒", "amount": "1个"},
+        {"name": "蒜末", "amount": "10g"},
+        {"name": "食用盐", "amount": "2g"},
+        {"name": "鸡精", "amount": "2g"}
+      ],
+      "optional": []
+    },
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "梅菜放到清水中，浸泡1小时",
+        "timeRequirement": {
+          "duration": "1小时",
+          "type": "exact"
+        },
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 2,
+        "description": "锅中倒入50ml食用油，将整个五花肉猪皮朝下，放到锅中1分钟，取出挂掉猪皮【可选】",
+        "timeRequirement": {
+          "duration": "1分钟",
+          "type": "exact"
+        },
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 3,
+        "description": "锅中加入开水，放入五花肉，大火煮20分钟（筷子可以插进五花肉），取出五花肉",
+        "timeRequirement": {
+          "duration": "20分钟",
+          "type": "exact"
+        },
+        "heatLevel": "大火",
+        "targetCondition": "筷子可以插进五花肉",
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 4,
+        "description": "在五花肉表面涂抹均匀老抽、五香粉、白砂糖，放置15分钟",
+        "timeRequirement": {
+          "duration": "15分钟",
+          "type": "exact"
+        },
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 5,
+        "description": "起锅烧油，加入五花肉，中火油炸直至两面金黄色（3-5分钟）",
+        "timeRequirement": {
+          "duration": "3-5分钟",
+          "type": "range"
+        },
+        "heatLevel": "中火",
+        "targetCondition": "两面金黄色",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 6,
+        "description": "起锅烧油，倒入梅菜，加上小米椒、蒜蓉、鸡精、食用盐后翻炒，直至炒干梅干菜水分",
+        "targetCondition": "炒干梅干菜水分",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 7,
+        "description": "五花肉切片（后端0.5-1cm）,放在大碗中，散上梅干菜",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 8,
+        "description": "中火蒸45分钟",
+        "timeRequirement": {
+          "duration": "45分钟",
+          "type": "exact"
+        },
+        "heatLevel": "中火",
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 9,
+        "description": "拿个盘子倒盖在五花肉大碗中，将五花肉倒在盘子中",
+        "isBlockable": false
+      }
+    ]
+  },
+  {
+    "dishName": "酱牛肉",
+    "images": ["dishes/meat_dish/酱牛肉/酱牛肉.jpg"],
+    "description": "家常酱牛肉营养丰富，味道香，不论是当作主食还是佐餐都很棒。一般初学者只需要10小时即可完成。",
+    "difficulty": 5,
+    "servings": "1人份",
+    "category": "荤菜",
+    "ingredients": {
+      "required": [
+        {"name": "牛腱子肉", "amount": "2000克"},
+        {"name": "香叶", "amount": "1片"},
+        {"name": "姜", "amount": "3片"},
+        {"name": "葱", "amount": "半根"},
+        {"name": "老抽", "amount": "15ml"},
+        {"name": "桂皮", "amount": "1块"},
+        {"name": "冰糖", "amount": "7-8粒"},
+        {"name": "花椒", "amount": "15粒"},
+        {"name": "料酒", "amount": "30ml"},
+        {"name": "生抽", "amount": "15ml"},
+        {"name": "盐", "amount": "8克"},
+        {"name": "八角", "amount": "4个"},
+        {"name": "黄豆酱", "amount": "15ml"}
+      ],
+      "optional": []
+    },
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "牛腱子肉清洗干净，用清水浸泡1小时，去除血水",
+        "timeRequirement": {
+          "duration": "1小时",
+          "type": "exact"
+        },
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 2,
+        "description": "用牙签或者叉子在牛腱子肉表面扎孔，加料酒、花椒、姜片后，用保鲜膜紧密包裹容器，腌制4-6小时",
+        "timeRequirement": {
+          "duration": "4-6小时",
+          "type": "range"
+        },
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 3,
+        "description": "牛腱子肉切成8cm，不超过10cm的肉块",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 4,
+        "description": "牛腱子肉放入锅中，加入冷水至水面没过牛肉，开锅至水沸腾开始计时，同时捞出浮沫。3分钟后停火，捞出牛肉，用温水洗净",
+        "timeRequirement": {
+          "duration": "3分钟",
+          "type": "exact"
+        },
+        "targetCondition": "水沸腾",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 5,
+        "description": "将洗净后的牛腱子肉放入砂锅或炖锅，加水没过牛腱子肉，开大火，放入除盐之外其他未使用的配料",
+        "heatLevel": "大火",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 6,
+        "description": "水开之后，大火转为小火，持续加热90分钟，加盐",
+        "timeRequirement": {
+          "duration": "90分钟",
+          "type": "exact"
+        },
+        "heatLevel": "大火转小火",
+        "targetCondition": "水开",
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 7,
+        "description": "加盐后，继续小火90分钟（注：每30分钟确认水位线，要求至少达到牛肉面高度的80%）",
+        "timeRequirement": {
+          "duration": "90分钟",
+          "type": "exact"
+        },
+        "heatLevel": "小火",
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 8,
+        "description": "加热180分钟后，捞出牛腱子肉，用保鲜膜紧密包裹，放入冰箱冷藏数小时",
+        "timeRequirement": {
+          "duration": "180分钟",
+          "type": "exact"
+        },
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 9,
+        "description": "取出后沿牛肉纹路切片，上桌食用，其他牛腱子肉建议不切片冷藏",
+        "isBlockable": false
+      }
+    ]
+  },
+  {
+    "dishName": "黑椒牛柳",
+    "images": ["dishes/meat_dish/黑椒牛柳/黑椒牛柳.jpg"],
+    "description": "黑椒牛柳是一道简单易做的菜。蔬菜与肉类均衡，富含蛋白质，口味适合大多数人。一般初学者只需要1小时以内即可完成。",
+    "difficulty": 4,
+    "servings": "2-3人份",
+    "category": "荤菜",
+    "ingredients": {
+      "required": [
+        {"name": "牛肉（可以用牛里脊肉或者牛排肉）", "amount": "100克"},
+        {"name": "洋葱", "amount": "1/12个"},
+        {"name": "菜椒（红/黄椒）", "amount": "1/12个"},
+        {"name": "淀粉", "amount": "3克"},
+        {"name": "黑胡椒（粉）", "amount": "1克"},
+        {"name": "黑椒（腌料）", "amount": "参照所购商品的说明按比例腌制"},
+        {"name": "盐", "amount": "1克"},
+        {"name": "花生油", "amount": "10ml"}
+      ],
+      "optional": []
+    },
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "将牛肉切条，长度最好控制在8厘米以下，厚度约5-10毫米，宽度约1厘米（要求不严格）",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 2,
+        "description": "利用腌料腌制牛肉，混合均匀后静置，用量与时间请参照商品说明，可以延长不能缩短",
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 3,
+        "description": "如果使用液态腌料，可以在腌制结束前三分钟撒一层黑胡椒粉，然后再加入淀粉，再次混合均匀后静置20分钟",
+        "timeRequirement": {
+          "duration": "20分钟",
+          "type": "exact"
+        },
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 4,
+        "description": "开火，热锅，加入花生油",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 5,
+        "description": "当能看到锅里的油冒出一丝烟时，放入牛肉，翻炒",
+        "targetCondition": "油冒出一丝烟",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 6,
+        "description": "开中火偏大，翻炒2分钟至牛肉外表变色（即不出现明显血色，有血色部分说明翻炒不到位）",
+        "timeRequirement": {
+          "duration": "2分钟",
+          "type": "exact"
+        },
+        "heatLevel": "中火偏大",
+        "targetCondition": "牛肉外表变色",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 7,
+        "description": "放入洋葱和菜椒，翻炒2分钟",
+        "timeRequirement": {
+          "duration": "2分钟",
+          "type": "exact"
+        },
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 8,
+        "description": "加入盐，再次撒一份黑胡椒粉，翻炒30秒，搅拌均匀",
+        "timeRequirement": {
+          "duration": "30秒",
+          "type": "exact"
+        },
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 9,
+        "description": "观察洋葱已经变软即可关火，出锅，盛盘",
+        "targetCondition": "洋葱已经变软",
+        "isBlockable": false
+      }
+    ]
+  },
+  {
+    "dishName": "新疆大盘鸡",
+    "images": ["dishes/meat_dish/新疆大盘鸡/大盘鸡.jpeg", "dishes/meat_dish/新疆大盘鸡/大盘鸡皮带面.jpeg"],
+    "description": "新疆大盘鸡是一道具有浓郁地方特色的菜品，香辣下饭，配上面条更是美味。",
+    "difficulty": 4,
+    "servings": "2人份",
+    "category": "荤菜",
+    "ingredients": {
+      "required": [
+        {"name": "鸡肉（鸡腿肉最好）", "amount": "1kg（两个火枪腿）"},
+        {"name": "土豆", "amount": "750g（2个适中大小）"},
+        {"name": "大葱", "amount": "100g"},
+        {"name": "菜椒", "amount": "50g"},
+        {"name": "甜椒", "amount": "50g"},
+        {"name": "白糖", "amount": "20g"},
+        {"name": "干线椒", "amount": "5个"},
+        {"name": "大蒜", "amount": "4瓣"},
+        {"name": "油", "amount": "50g"},
+        {"name": "花椒", "amount": "适量"},
+        {"name": "香叶", "amount": "适量"},
+        {"name": "香果", "amount": "适量"},
+        {"name": "盐", "amount": "5g"},
+        {"name": "生抽", "amount": "7ml"},
+        {"name": "蚝油", "amount": "10g"},
+        {"name": "料酒", "amount": "100g"}
+      ],
+      "optional": []
+    },
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "肉先剁好，块状，用清水+盐浸泡5分钟，去除血水，去腥，然后空干水",
+        "timeRequirement": {
+          "duration": "5分钟",
+          "type": "exact"
+        },
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 2,
+        "description": "葱蒜辣椒土豆等洗干净，土豆削皮",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 3,
+        "description": "葱白切长段，长度4cm一段，菜椒和线椒切块状",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 4,
+        "description": "土豆切成滚刀土豆，即切一刀动滚动一下，一块土豆大概有4cm*4cm大小即可",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 5,
+        "description": "炒糖色：先将油加入锅中，然后将白砂糖放入，用锅铲来回搅拌，将糖炒化，然后炒出焦黄色，此时将空干水的鸡肉倒入锅中翻炒，进行上色",
+        "targetCondition": "炒出焦黄色",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 6,
+        "description": "放入花椒，香叶，香果，干线椒等进行翻炒",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 7,
+        "description": "放入5g盐，生抽7ml，蚝油10g，料酒100g，倒入1升清水，料酒可以用啤酒代替",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 8,
+        "description": "调至中火，将水烧开，调制中小火慢炖入味",
+        "heatLevel": "中火转中小火",
+        "targetCondition": "水烧开",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 9,
+        "description": "当水收至鸡肉即将露出时，将土豆放在锅表面：注意不要翻动土豆，就盖在表面，不然翻到下面容易粘锅，继续盖锅盖炖，炖一会后将大葱，菜椒和甜椒放入，继续炖",
+        "targetCondition": "水收至鸡肉即将露出",
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 10,
+        "description": "炖到汁收的差不多时可以进行翻面，将土豆与汤汁相吸，最后关火盛出",
+        "targetCondition": "汁收的差不多",
+        "isBlockable": false
+      }
+    ]
+  },
+  {
+    "dishName": "口水鸡",
+    "images": ["dishes/meat_dish/口水鸡/口水鸡.jpg"],
+    "description": "口水鸡（凉菜），炎炎夏日里，热菜难以入口，但又嗜肉如命，除了口水鸡，实在想不出更好的适合在夏天吃的肉菜了。被红油包裹的鸡肉，红艳鲜亮，冰爽Q弹，鲜美而不腻。夏日米饭杀手当之无愧！",
+    "difficulty": 3,
+    "servings": "1人份",
+    "category": "荤菜",
+    "ingredients": {
+      "required": [
+        {"name": "食用油", "amount": "20ml"},
+        {"name": "鸡", "amount": "半只(500g)"},
+        {"name": "辣椒粉", "amount": "20g"},
+        {"name": "花椒", "amount": "30颗(20g)"},
+        {"name": "花生", "amount": "10颗(30g)"},
+        {"name": "小葱", "amount": "2颗(50g)"},
+        {"name": "姜", "amount": "1小块(20g)"},
+        {"name": "蒜", "amount": "2个(10g)"},
+        {"name": "白糖", "amount": "5g"},
+        {"name": "生抽", "amount": "5ml"},
+        {"name": "醋", "amount": "5ml"},
+        {"name": "味精", "amount": "5g"},
+        {"name": "花椒粉", "amount": "5g"},
+        {"name": "香菜", "amount": "5g"}
+      ],
+      "optional": []
+    },
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "姜切片，1颗小葱，15颗花椒备用",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 2,
+        "description": "鸡肉洗干净，放入锅中，清水没过鸡肉，放入姜片、小葱和花椒，开大火烧开",
+        "heatLevel": "大火",
+        "targetCondition": "烧开",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 3,
+        "description": "大火烧开后，转中小火20分钟关火",
+        "timeRequirement": {
+          "duration": "20分钟",
+          "type": "exact"
+        },
+        "heatLevel": "中小火",
+        "isBlockable": true
+      },
+      {
+        "stepNumber": 4,
+        "description": "取出鸡肉，放入冰水中，直至冰凉",
+        "targetCondition": "冰凉",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 5,
+        "description": "取出鸡肉，切块摆盘子中，备用",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 6,
+        "description": "小火把锅烧热，导入花生，烘烤至表皮爆裂。（注意随时翻动，不要糊了）",
+        "heatLevel": "小火",
+        "targetCondition": "表皮爆裂",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 7,
+        "description": "一颗葱切成段，蒜拍成末，花椒15颗，花生去皮切碎",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 8,
+        "description": "锅内导入油烧热后，放入葱段，花椒和一半蒜末，炒香",
+        "targetCondition": "炒香",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 9,
+        "description": "炒至油温8成热，关火，滤出热油",
+        "targetCondition": "油温8成热",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 10,
+        "description": "将热油倒入放辣椒粉的碗中，搅拌，并滤出红油",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 11,
+        "description": "红油中放入剩余蒜末、生抽、醋、盐、味精、糖、香油、花椒粉。拌匀放凉",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 12,
+        "description": "在鸡肉上撒上花生碎，把红油淋到切好的鸡肉上，撒上香菜。成盘",
+        "isBlockable": false
+      }
+    ]
+  },
+  {
+    "dishName": "凉拌鸡丝",
+    "images": ["dishes/meat_dish/凉拌鸡丝/凉拌鸡丝.jpg", "dishes/meat_dish/凉拌鸡丝/凉拌鸡丝_焯水.jpg", "dishes/meat_dish/凉拌鸡丝/凉拌鸡丝_撕.jpg"],
+    "description": "隔离期间的一道快手菜，少油低卡，制作简单，预计制作时间30分钟",
+    "difficulty": 3,
+    "servings": "1人份",
+    "category": "荤菜",
+    "ingredients": {
+      "required": [
+        {"name": "鸡胸肉（常温冷冻均可）", "amount": "200克"},
+        {"name": "麻油（花椒油）", "amount": "5毫升"},
+        {"name": "生抽", "amount": "4毫升"},
+        {"name": "香醋", "amount": "4毫升"},
+        {"name": "白糖", "amount": "3克"},
+        {"name": "盐", "amount": "2克"},
+        {"name": "料酒", "amount": "20毫升"},
+        {"name": "姜", "amount": "20克"}
+      ],
+      "optional": []
+    },
+    "steps": [
+      {
+        "stepNumber": 1,
+        "description": "姜切片，备用",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 2,
+        "description": "锅中倒入4升水",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 3,
+        "description": "加入鸡胸肉、姜片",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 4,
+        "description": "倒入20毫升料酒",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 5,
+        "description": "开大火不盖盖将水烧开",
+        "heatLevel": "大火",
+        "targetCondition": "水烧开",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 6,
+        "description": "水开后转中火，用勺子将浮沫捞出",
+        "heatLevel": "中火",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 7,
+        "description": "继续煮5-7分钟，如果是非冷冻肉煮5分钟，冷冻肉煮7分钟",
+        "timeRequirement": {
+          "duration": "5-7分钟",
+          "type": "range"
+        },
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 8,
+        "description": "鸡胸肉大小会影响成熟时间，用筷子插入鸡胸肉，如果能轻松插入，代表鸡肉熟了。如果不熟需延长煮制时间",
+        "targetCondition": "能轻松插入",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 9,
+        "description": "用凉白开水冲泡鸡胸肉，使鸡胸肉降至室温",
+        "targetCondition": "降至室温",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 10,
+        "description": "顺着鸡胸肉纹理将鸡胸肉撕成细丝",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 11,
+        "description": "准备一个碗",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 12,
+        "description": "碗中加入准备好的麻油、生抽、香醋、白糖、盐",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 13,
+        "description": "搅拌料汁，使糖和盐尽量溶化",
+        "targetCondition": "糖和盐尽量溶化",
+        "isBlockable": false
+      },
+      {
+        "stepNumber": 14,
+        "description": "将料汁倒入鸡丝中，搅拌均匀",
+        "isBlockable": false
+      }
+    ]
+  }
+]
