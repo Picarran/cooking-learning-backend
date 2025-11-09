@@ -44,13 +44,14 @@ public class CookingServiceImpl implements CookingService {
 
         Map<Integer, Integer> stepMap = new HashMap<>();
         for(int i=0;i<recipes.size();i++){
-            stepMap.put(i,0);
+            stepMap.put(i,-1);
         }
         CookingRuntime cookingRuntime = CookingRuntime.builder()
                 .sid(sid)
                 .recipes(recipes)
                 .stepMap(stepMap)
                 .currentRecipeIndex(0)
+                .taskMap(new HashMap<>())
                 .build();
 
         cookingMap.put(sid, cookingRuntime);
@@ -70,85 +71,96 @@ public class CookingServiceImpl implements CookingService {
         cookingMap.remove(sid);
     }
 
-
-
-
     // 客户端主动拉取下一步（并消费）
     public String pollNextStepAndConsume(String sid) {
-        CookingRuntime cookingRuntime = cookingMap.get(sid);
-        List<Recipe> recipes = cookingRuntime.getRecipes();
-        int curRecipeIdx = cookingRuntime.getCurrentRecipeIndex();
-
-        if(curRecipeIdx >= recipes.size()){
-            // 当前没有下一步了
+        if(!currentRecipeExist(sid)){
+            if(!checkTasksExist(sid)) {
+                // 没有下一步且没有菜在等待
+                WsHandler.sendToWsSession(sid, "all dishes done");
+            }
             return null;
         }
-        Recipe curRecipe = recipes.get(curRecipeIdx);
-        String dishName = curRecipe.getDishName();
 
-        Map<Integer,Integer> stepMap = cookingRuntime.getStepMap();
-        // 取当前一步
-        int curStepIdx = stepMap.get(curRecipeIdx);
-        if(curStepIdx >= recipes.get(curRecipeIdx).getSteps().size()){
-            // 当前没有下一步了
+
+        // 处理：目前指向blockable步但还没开始
+        if(currentStepIsBlockableButNotStart(sid)) {
+            System.out.println("currentStepIsBlockableButNotStart, need call block start");
+            WsHandler.sendToWsSession(sid, "currentStepIsBlockableButNotStart, need call block start");
             return null;
         }
-        Step step = curRecipe.getSteps().get(curStepIdx);
-        if(step.getIsBlockable()){
-            System.out.println("当前步isblockable，直接返回让用户确认");
+
+        if(gotoNextStepifPresent(sid)){
+            CookingRuntime cookingRuntime = cookingMap.get(sid);
+            int curRecipeIdx = cookingRuntime.getCurrentRecipeIndex();
+            List<Recipe> recipes = cookingRuntime.getRecipes();
+            Recipe curRecipe = recipes.get(curRecipeIdx);
+            String dishName = curRecipe.getDishName();
+
+            int curStepIdx = cookingRuntime.getStepMap().get(curRecipeIdx);
+            Step step = curRecipe.getSteps().get(curStepIdx);
+
+            if(step.getIsBlockable()){
+                System.out.println("current step is blockable");
+            }
             return toJsonStep(dishName, step);
+        } else if(!checkTasksExist(sid)) {
+            // 没有下一步且没有菜在等待
+            WsHandler.sendToWsSession(sid, "all dishes done");
         }
+        return null;
 
-        stepMap.put(curRecipeIdx, stepMap.get(curRecipeIdx) + 1);
-
-        while (curRecipeIdx <= recipes.size() && recipes.get(curRecipeIdx).getSteps().size() <= curStepIdx){
-            curRecipeIdx++;
-            curStepIdx = stepMap.get(curRecipeIdx);
-        }
-        cookingRuntime.setCurrentRecipeIndex(curRecipeIdx);
-        return toJsonStep(dishName, step);
     }
 
-    public Boolean startBlockabled(String sid){
+    private Boolean checkTasksExist(String sid){
         CookingRuntime cookingRuntime = cookingMap.get(sid);
+        for(Map.Entry<String, ScheduledFuture<?>> e : cookingRuntime.getTaskMap().entrySet()){
+            String key = e.getKey();
+            ScheduledFuture<?> task = e.getValue();
+//                Long delay = task.getDelay(TimeUnit.MINUTES);
+            Long delay = task.getDelay(TimeUnit.SECONDS);
+            WsHandler.sendToWsSession(sid, key + "wait... left: " + delay + "seconds");
+//                WsHandler.sendToWsSession(sid, key + "wait... left: " + delay + "minutes");
+            return true;
+        }
+        return false;
+    }
+    public Boolean startBlockabled(String sid){
+        if(!currentRecipeExist(sid)){
+            return false;  // 理论上不能到这里
+        }
+        CookingRuntime cookingRuntime = cookingMap.get(sid);
+
         List<Recipe> recipes = cookingRuntime.getRecipes();
         int curRecipeIdx = cookingRuntime.getCurrentRecipeIndex();
-        if(curRecipeIdx >= recipes.size()){
-            // 当前没有下一步了
-            return false;
-        }
-
         Recipe curRecipe = recipes.get(curRecipeIdx);
+
         int curStepIdx = cookingRuntime.getStepMap().get(curRecipeIdx);
-        if(curStepIdx >= recipes.get(curRecipeIdx).getSteps().size()){
-            // 当前没有下一步了
-            return false;
-        }
         Step step = curRecipe.getSteps().get(curStepIdx);
 
-        if(!step.getIsBlockable()){
+        // 如果blockable，设定定时任务
+        if(step.getIsBlockable()){
+            int blockMinutes = TimeParser.parseMinutes(step.getTimeRequirement().getDuration());
+
+            // set second for testing
+            ScheduledFuture<?> future = scheduler.schedule(() -> {
+                // 时间到后自动执行
+                this.finishBlockable(sid, curRecipeIdx);
+            }, blockMinutes, TimeUnit.SECONDS);
+
+//                ScheduledFuture<?> future = scheduler.schedule(() -> {
+//                    // 时间到后自动执行
+//                    this.finishBlockable(sid, curRecipeIdx);
+//                }, blockMinutes, TimeUnit.MINUTES);
+            cookingRuntime.getTaskMap()
+                    .put("RecipeIdx: " + String.valueOf(curRecipeIdx) + " StepIdx: " + String.valueOf(curStepIdx), future);
+        } else {
             return false;
         }
 
-        int blockSeconds = TimeParser.parseMinutes(step.getTimeRequirement().getDuration());
-
-
-        // set second for testing
-        ScheduledFuture<?> future = scheduler.schedule(() -> {
-            // 时间到后自动执行
-            this.finishBlockable(sid, curRecipeIdx);
-        }, blockSeconds, TimeUnit.SECONDS);
-
-//        ScheduledFuture<?> future = scheduler.schedule(() -> {
-//            // 时间到后自动执行
-//            this.finishBlockable(sid, curRecipeIdx);
-//        }, blockSeconds, TimeUnit.MINUTES);
-
         // 可以开始做下一道菜
-        cookingRuntime.setCurrentRecipeIndex(curRecipeIdx+1);
+        cookingRuntime.setCurrentRecipeIndex(curRecipeIdx + 1);
 
         return true;
-
     }
 
     public void finishBlockable(String sid, int curRecipeIdx){
@@ -156,36 +168,65 @@ public class CookingServiceImpl implements CookingService {
         CookingRuntime cookingRuntime = cookingMap.get(sid);
         if(cookingRuntime == null) return;
 
-
-
         cookingRuntime.setCurrentRecipeIndex(curRecipeIdx);
-
         List<Recipe> recipes = cookingRuntime.getRecipes();
-        if(curRecipeIdx >= recipes.size()){
-            // 当前没有下一步了
-            WsHandler.sendToWsSession(sid, "BLOCK_FINISHED, NEXT STEP: NONE\n");
-        }
+
         Recipe curRecipe = recipes.get(curRecipeIdx);
         String dishName = curRecipe.getDishName();
 
         Map<Integer,Integer> stepMap = cookingRuntime.getStepMap();
         // 取当前一步
         int curStepIdx = stepMap.get(curRecipeIdx);
-        if(curStepIdx >= recipes.get(curRecipeIdx).getSteps().size()){
-            // 当前没有下一步了
-            WsHandler.sendToWsSession(sid, "BLOCK_FINISHED, NEXT STEP: NONE\n");
-        }
+
         Step step = curRecipe.getSteps().get(curStepIdx);
 
-        stepMap.put(curRecipeIdx, stepMap.get(curRecipeIdx) + 1);
+        WsHandler.sendToWsSession(sid, "BLOCK_FINISHED: " + toJsonStep(dishName, step));
+    }
 
-        while (curRecipeIdx <= recipes.size() && recipes.get(curRecipeIdx).getSteps().size() <= curStepIdx){
-            curRecipeIdx++;
-            curStepIdx = stepMap.get(curRecipeIdx);
+
+    private Boolean currentRecipeExist(String sid) {
+        CookingRuntime cookingRuntime = cookingMap.get(sid);
+        List<Recipe> recipes = cookingRuntime.getRecipes();
+        int curRecipeIdx = cookingRuntime.getCurrentRecipeIndex();
+
+        if(curRecipeIdx >= recipes.size()){
+            return false;
         }
-        cookingRuntime.setCurrentRecipeIndex(curRecipeIdx);
+        return true;
+    }
 
-        WsHandler.sendToWsSession(sid, "BLOCK_FINISHED, NEXT STEP: \n" + toJsonStep(dishName, step));
+    /*
+    如果有下一步，指针指向下一步，并返回true
+    否则直接返回false
+     */
+    private Boolean gotoNextStepifPresent (String sid){
+        CookingRuntime cookingRuntime = cookingMap.get(sid);
+        List<Recipe> recipes = cookingRuntime.getRecipes();
+        int curRecipeIdx = cookingRuntime.getCurrentRecipeIndex();
+
+        if(curRecipeIdx >= recipes.size()){
+            // 当前没有下一步了
+            return false;
+        }
+
+        Map<Integer,Integer> stepMap = cookingRuntime.getStepMap();
+        // 取下一步
+        int curStepIdx = stepMap.get(curRecipeIdx) + 1;
+        // 当前的菜做完了，进入下一道
+        while (curRecipeIdx < recipes.size() &&  curStepIdx  >= recipes.get(curRecipeIdx).getSteps().size()){
+            curRecipeIdx++;
+            if(curRecipeIdx < recipes.size()) {
+                curStepIdx = stepMap.get(curRecipeIdx) + 1;
+            }
+        }
+        // 遍历完了要做的菜也没找到下一步
+        if(curRecipeIdx >= recipes.size()){
+            return false;
+        }
+        // 找到了,设置当前步的信息
+        cookingRuntime.setCurrentRecipeIndex(curRecipeIdx);
+        stepMap.put(curRecipeIdx, curStepIdx);
+        return true;
     }
 
     private String toJsonStep(String recipeName, Step step){
@@ -194,4 +235,28 @@ public class CookingServiceImpl implements CookingService {
         node.setAll((ObjectNode) stepNode);
         return node.toString();
     }
+
+
+    private Boolean currentStepIsBlockableButNotStart(String sid){
+        CookingRuntime cookingRuntime = cookingMap.get(sid);
+        List<Recipe> recipes = cookingRuntime.getRecipes();
+        int curRecipeIdx = cookingRuntime.getCurrentRecipeIndex();
+        Recipe recipe = recipes.get(curRecipeIdx);
+
+        int curStepIdx = cookingRuntime.getStepMap().get(curRecipeIdx);
+        // 还没开始
+        if(curStepIdx==-1){
+            return false;
+        }
+        if(recipe.getSteps().get(curStepIdx).getIsBlockable() &&
+                (!cookingRuntime.getTaskMap().containsKey("RecipeIdx: " + String.valueOf(curRecipeIdx) + " StepIdx: " + String.valueOf(curStepIdx)))){
+            return true;
+        }
+        // 如果是blockable且已经做过，删掉记录
+        if(recipe.getSteps().get(curStepIdx).getIsBlockable()){
+            cookingRuntime.getTaskMap().remove("RecipeIdx: " + String.valueOf(curRecipeIdx) + " StepIdx: " + String.valueOf(curStepIdx));
+        }
+        return false;
+    }
+
 }

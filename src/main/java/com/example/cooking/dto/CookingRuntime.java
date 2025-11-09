@@ -16,5 +16,7 @@ public class CookingRuntime {
     private List<Recipe> recipes;     // 用户这次选的所有菜
     private int currentRecipeIndex;   // 当前做到第几个菜
 
-    private Map<Integer, Integer> stepMap;
+    private Map<Integer, Integer> stepMap;  // 菜idx : 当前菜步骤idx
+
+    private Map<String, ScheduledFuture<?>> taskMap;  // "菜idx + 当前菜步骤idx" : task
 }
