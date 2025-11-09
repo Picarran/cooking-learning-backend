@@ -9,13 +9,13 @@
 
 ## 接口简要示例：
 ### 连接WS
-connectWs()
-VM44:25 [ws] recv (json): {type: 'CONNECTED', wsSessionId: 'd1905279-809b-ae71-ac3e-6382c9596fd6'}
-VM44:29 [ws] saved sid = d1905279-809b-ae71-ac3e-6382c9596fd6
+- connectWs()
+    - VM44:25 [ws] recv (json): {type: 'CONNECTED', wsSessionId: 'd1905279-809b-ae71-ac3e-6382c9596fd6'}
+    - VM44:29 [ws] saved sid = d1905279-809b-ae71-ac3e-6382c9596fd6
 
 ### 创建菜单：
-createSession(["简易红烧肉","白灼虾"])
-VM44:25 [ws] recv (json): {type: 'CREATE_SESSION', message: 'success'}
+- createSession(["简易红烧肉","白灼虾"])
+    - VM44:25 [ws] recv (json): {type: 'CREATE_SESSION', message: 'success'}
 
 ### 拉取下一步：
 - 正常情况：
