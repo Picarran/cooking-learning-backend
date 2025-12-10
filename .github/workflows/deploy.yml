@@ -28,7 +28,7 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
           port: ${{ secrets.SERVER_PORT || 22 }}
-          source: target/*.jar
+          source: target/cooking-0.0.1-SNAPSHOT.jar
           target: ${{ secrets.DEPLOY_DIR }}
           strip_components: 1
 
@@ -42,10 +42,5 @@ jobs:
           script: |
             set -e
             cd ${{ secrets.DEPLOY_DIR }}
-            # 如果 scp 上传的文件名不是固定名，改名为约定的 app 名
-            # 假设构建产物名类似 cooking-0.0.1-SNAPSHOT.jar
-            JAR_FILE=$(ls -t *.jar | head -n1)
-            echo "latest jar: $JAR_FILE"
-            mv -f "$JAR_FILE" cooking-0.0.1-SNAPSHOT.jar
             chmod +x start.sh stop.sh || true
             ./start.sh
