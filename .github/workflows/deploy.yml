@@ -1,0 +1,51 @@
+name: CICD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Build with Maven
+        run: mvn -B clean package -DskipTests
+
+      - name: Upload jar to server (SCP)
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          port: ${{ secrets.SERVER_PORT || 22 }}
+          source: target/*.jar
+          target: ${{ secrets.DEPLOY_DIR }}
+          strip_components: 1
+
+      - name: Deploy and restart on server (SSH)
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          port: ${{ secrets.SERVER_PORT || 22 }}
+          script: |
+            set -e
+            cd ${{ secrets.DEPLOY_DIR }}
+            # 如果 scp 上传的文件名不是固定名，改名为约定的 app 名
+            # 假设构建产物名类似 cooking-0.0.1-SNAPSHOT.jar
+            JAR_FILE=$(ls -t *.jar | head -n1)
+            echo "latest jar: $JAR_FILE"
+            mv -f "$JAR_FILE" cooking-0.0.1-SNAPSHOT.jar
+            chmod +x start.sh stop.sh || true
+            ./start.sh
