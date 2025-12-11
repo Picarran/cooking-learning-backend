@@ -5,7 +5,8 @@ import com.example.cooking.common.web.WebSocketManager;
 import com.example.cooking.handler.WsHandler;
 import com.example.cooking.dao.entity.Recipe;
 import com.example.cooking.dao.entity.Step;
-import com.example.cooking.dao.repository.RecipeRepository;
+import com.example.cooking.dao.mapper.RecipeMapper;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.example.cooking.dao.entity.CookingRuntime;
 import com.example.cooking.service.CookingService;
 import com.example.cooking.utils.TimeParser;
@@ -28,7 +29,7 @@ public class CookingServiceImpl implements CookingService {
     private final Map<String, CookingRuntime> cookingMap = new ConcurrentHashMap<>();
     private final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(8);
 
-    private final RecipeRepository recipeRepository;
+    private final com.example.cooking.service.RecipeReadService recipeReadService;
 
     private static final ObjectMapper M = new ObjectMapper();
 
@@ -38,10 +39,10 @@ public class CookingServiceImpl implements CookingService {
         // 从数据库找并加入recipes
         for (com.fasterxml.jackson.databind.JsonNode n : dishNamesNode) {
             String name = n.asText();
-            Optional<Recipe> recipeOpt = recipeRepository.findByDishName(name);
-            if(recipeOpt.isPresent()){
-                recipes.add(recipeOpt.get());
-            }else{
+            Recipe recipe = recipeReadService.findByDishName(name);
+            if (recipe != null) {
+                recipes.add(recipe);
+            } else {
                 System.err.println("no such dish: " + name);
                 return false;
             }

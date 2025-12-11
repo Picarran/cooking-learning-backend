@@ -3,7 +3,7 @@ package com.example.cooking.controller;
 import com.example.cooking.dao.entity.CookingRuntime;
 import com.example.cooking.dao.entity.IngredientItem;
 import com.example.cooking.dao.entity.Recipe;
-import com.example.cooking.dao.repository.RecipeRepository;
+import com.example.cooking.dao.mapper.RecipeMapper;
 import com.example.cooking.service.CookingService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 public class SessionController {
 
     private final CookingService cookingService;
-    private final RecipeRepository recipeRepository;
+    private final com.example.cooking.service.RecipeReadService recipeReadService;
     private final ObjectMapper objectMapper = new ObjectMapper();
 
     @PostMapping("/sessions")
@@ -57,7 +57,7 @@ public class SessionController {
 
     @GetMapping("/shopping-list")
     public ResponseEntity<Map<String, Object>> shoppingList(@RequestParam List<Long> recipeIds) {
-        List<Recipe> recipes = recipeRepository.findAllById(recipeIds);
+        List<Recipe> recipes = recipeReadService.findByIds(recipeIds);
         List<IngredientItem> all = new ArrayList<>();
         for (Recipe r : recipes) {
             if (r.getIngredients() != null && r.getIngredients().getRequired() != null) {

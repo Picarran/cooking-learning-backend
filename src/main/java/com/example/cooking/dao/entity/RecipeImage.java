@@ -1,27 +1,17 @@
 package com.example.cooking.dao.entity;
 
 import lombok.Data;
-import java.time.LocalDateTime;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.baomidou.mybatisplus.annotation.TableField;
 
 @Data
-@TableName("feedback")
-public class Feedback {
+@TableName("recipe_images")
+public class RecipeImage {
     @TableId(type = IdType.AUTO)
     private Long id;
 
-    @TableField("recipe_id")
     private Long recipeId;
 
-    private Integer rating; // 1-5
-
-    private String comment;
-
     private String imageUrl;
-
-    @TableField("created_at")
-    private LocalDateTime createdAt = LocalDateTime.now();
 }

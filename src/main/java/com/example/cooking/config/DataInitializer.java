@@ -1,52 +1,114 @@
 package com.example.cooking.config;
 
-import com.example.cooking.dao.entity.Recipe;
-import com.example.cooking.dao.repository.RecipeRepository;
+import com.example.cooking.dao.entity.*;
+import com.example.cooking.dao.mapper.*;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
 @Component
 @RequiredArgsConstructor
+@ConditionalOnProperty(prefix = "app.data-initializer", name = "enabled", havingValue = "true")
 public class DataInitializer implements CommandLineRunner {
 
-    private final RecipeRepository recipeRepository;
+    private final RecipeMapper recipeMapper;
+    private final RecipeImageMapper recipeImageMapper;
+    private final RequiredIngredientMapper requiredIngredientMapper;
+    private final OptionalIngredientMapper optionalIngredientMapper;
+    private final StepMapper stepMapper;
 
-    private final ObjectMapper objectMapper;
+    private final ObjectMapper objectMapper = new ObjectMapper();
+
     @Override
     public void run(String... args) throws Exception {
-        InputStream is = null;
-        try {
-            // 1. 优先从 classpath (src/main/resources/data.json) 读取
-            is = this.getClass().getClassLoader().getResourceAsStream("data.json");
+        InputStream is = this.getClass().getClassLoader().getResourceAsStream("data.json");
+        if (is == null) {
+            System.out.println("DataInitializer: data.json not found in classpath, skipping");
+            return;
+        }
 
+        List<Recipe> recipes = objectMapper.readValue(is, new TypeReference<List<Recipe>>() {});
 
-            if (is == null) {
-                System.out.println(">>> DataInitializer: 未找到 data.json（classpath:/data.json 或 /mnt/data/data.json）");
-                return;
+        if (recipes == null || recipes.isEmpty()) {
+            System.out.println("DataInitializer: no recipes found in data.json");
+            return;
+        }
+
+        for (Recipe r : recipes) {
+            // prepare a shallow copy to save recipe fields only
+            Recipe toSave = new Recipe();
+            toSave.setDishName(r.getDishName());
+            toSave.setDescription(r.getDescription());
+            toSave.setDifficulty(r.getDifficulty());
+            toSave.setServings(r.getServings());
+            toSave.setCategory(r.getCategory());
+
+            recipeMapper.insert(toSave);
+            Long recipeId = toSave.getId();
+
+            // images
+            if (r.getImages() != null) {
+                for (String img : r.getImages()) {
+                    RecipeImage ri = new RecipeImage();
+                    ri.setRecipeId(recipeId);
+                    ri.setImageUrl(img);
+                    recipeImageMapper.insert(ri);
+                }
             }
 
-            // 3. 解析为 List<Recipe>
-            List<Recipe> recipes = objectMapper.readValue(is, new TypeReference<List<Recipe>>() {});
-
-            // 4. 检查数据库是否已有数据，避免重复加载
-            if (recipeRepository.count() == 0) {
-                // 全部保存到数据库
-                recipeRepository.saveAll(recipes);
-                System.out.println(">>> Recipe data initialized, count = " + recipes.size());
-            } else {
-                System.out.println(">>> Recipe data already exists, skipping initialization");
+            // ingredients
+            if (r.getIngredients() != null) {
+                if (r.getIngredients().getRequired() != null) {
+                    for (IngredientItem it : r.getIngredients().getRequired()) {
+                        RequiredIngredient ri = new RequiredIngredient();
+                        ri.setRecipeId(recipeId);
+                        ri.setName(it.getName());
+                        ri.setAmount(it.getAmount());
+                        ri.setNote(it.getNote());
+                        requiredIngredientMapper.insert(ri);
+                    }
+                }
+                if (r.getIngredients().getOptional() != null) {
+                    for (IngredientItem it : r.getIngredients().getOptional()) {
+                        OptionalIngredient oi = new OptionalIngredient();
+                        oi.setRecipeId(recipeId);
+                        oi.setName(it.getName());
+                        oi.setAmount(it.getAmount());
+                        oi.setNote(it.getNote());
+                        optionalIngredientMapper.insert(oi);
+                    }
+                }
             }
-        } finally {
-            if (is != null) {
-                try { is.close(); } catch (IOException ignored) {}
+
+            // steps
+            if (r.getSteps() != null) {
+                for (Step s : r.getSteps()) {
+                    Step toStep = new Step();
+                    toStep.setRecipeId(recipeId);
+                    toStep.setStepNumber(s.getStepNumber());
+                    toStep.setRecipeId(recipeId);
+                    toStep.setDescription(s.getDescription());
+                    if (s.getTimeRequirement() != null) {
+                        toStep.setTimeRequirement(s.getTimeRequirement());
+                        toStep.setTimeDuration(s.getTimeRequirement().getDuration());
+                        toStep.setTimeType(s.getTimeRequirement().getType());
+                    }
+                    toStep.setTargetCondition(s.getTargetCondition());
+                    toStep.setIsBlockable(s.getIsBlockable());
+                    toStep.setHeatLevel(s.getHeatLevel());
+                    toStep.setNote(s.getNote());
+                    stepMapper.insert(toStep);
+                }
             }
         }
+
+        System.out.println("DataInitializer: inserted " + recipes.size() + " recipes");
     }
 }
+ 
