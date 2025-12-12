@@ -3,6 +3,7 @@ package com.example.cooking.config;
 import com.example.cooking.common.exception.CookingException;
 import com.example.cooking.dto.resp.Result;
 import com.example.cooking.utils.JwtUtil;
+import com.example.cooking.utils.UserContext;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
@@ -44,9 +45,7 @@ public class JwtFilter extends OncePerRequestFilter {
                 try {
                     Jws<Claims> claims = jwtUtil.parseToken(token);
                     String sub = claims.getBody().getSubject();
-                    if (sub != null) {
-                        request.setAttribute("currentUserId", Long.parseLong(sub));
-                    }
+                    UserContext.setUserId(Long.parseLong(sub));
                 } catch (JwtException e) {
                     writeError(response, Result.buildFailure("非法token或token过期!"), HttpServletResponse.SC_UNAUTHORIZED);
                     return;
@@ -61,6 +60,8 @@ public class JwtFilter extends OncePerRequestFilter {
             writeError(response, Result.buildFailure(e.getMessage()), HttpServletResponse.SC_UNAUTHORIZED);
         } catch (Exception e) {
             writeError(response, Result.buildFailure(e.getMessage()), HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+        } finally {
+            UserContext.clear();
         }
     }
 
