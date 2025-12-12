@@ -3,13 +3,12 @@ package com.example.cooking.controller;
 import com.example.cooking.dao.entity.CookingRuntime;
 import com.example.cooking.dao.entity.IngredientItem;
 import com.example.cooking.dao.entity.Recipe;
-import com.example.cooking.dao.mapper.RecipeMapper;
 import com.example.cooking.service.CookingService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
+import com.example.cooking.dto.Result;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
@@ -25,38 +24,40 @@ public class SessionController {
     private final ObjectMapper objectMapper = new ObjectMapper();
 
     @PostMapping("/sessions")
-    public ResponseEntity<Map<String, String>> createSession(@RequestBody CreateSessionRequest req) {
+    public Result<Map<String, String>> createSession(@RequestBody CreateSessionRequest req) {
         String sid = UUID.randomUUID().toString();
         ArrayNode arr = objectMapper.createArrayNode();
         req.getDishes().forEach(arr::add);
         boolean ok = cookingService.createSession(sid, arr);
         if (!ok) {
-            return ResponseEntity.badRequest().body(Map.of("error", "创建会话失败，菜名不存在"));
+            return Result.buildFailure(Map.of("error", "创建会话失败，菜名不存在"));
         }
-        return ResponseEntity.ok(Map.of("sessionId", sid));
+        return Result.buildSuccess(Map.of("sessionId", sid));
     }
 
     @PostMapping("/sessions/{sid}/next")
-    public ResponseEntity<Map<String, Object>> next(@PathVariable String sid) {
+    public Result<Map<String, Object>> next(@PathVariable String sid) {
         boolean ok = cookingService.pollNextStepAndConsume(sid);
-        return ResponseEntity.ok(Map.of("success", ok));
+        return Result.buildSuccess(Map.of("success", ok));
     }
 
     @PostMapping("/sessions/{sid}/blockable")
-    public ResponseEntity<Map<String, Object>> startBlockable(@PathVariable String sid) {
+    public Result<Map<String, Object>> startBlockable(@PathVariable String sid) {
         boolean ok = cookingService.startBlockabled(sid);
-        return ResponseEntity.ok(Map.of("success", ok));
+        return Result.buildSuccess(Map.of("success", ok));
     }
 
     @GetMapping("/sessions/{sid}")
-    public ResponseEntity<?> sessionState(@PathVariable String sid) {
+    public Result<?> sessionState(@PathVariable String sid) {
         Optional<CookingRuntime> runtimeOpt = cookingService.getRuntime(sid);
-        return runtimeOpt.<ResponseEntity<?>>map(ResponseEntity::ok)
-                .orElseGet(() -> ResponseEntity.notFound().build());
+        if (runtimeOpt.isPresent()) {
+            return Result.buildSuccess(runtimeOpt.get());
+        }
+        return new Result<>(404, "not found", null);
     }
 
     @GetMapping("/shopping-list")
-    public ResponseEntity<Map<String, Object>> shoppingList(@RequestParam List<Long> recipeIds) {
+    public Result<Map<String, Object>> shoppingList(@RequestParam List<Long> recipeIds) {
         List<Recipe> recipes = recipeReadService.findByIds(recipeIds);
         List<IngredientItem> all = new ArrayList<>();
         for (Recipe r : recipes) {
@@ -74,9 +75,9 @@ public class SessionController {
             return Map.of("name", e.getKey(), "amount", amount);
         }).toList();
 
-        return ResponseEntity.ok(Map.of(
-                "count", items.size(),
-                "items", items
+        return Result.buildSuccess(Map.of(
+            "count", items.size(),
+            "items", items
         ));
     }
 
