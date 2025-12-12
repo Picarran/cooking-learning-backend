@@ -1,6 +1,6 @@
 package com.example.cooking.controller;
 
-import com.example.cooking.service.RecipeReadService;
+import com.example.cooking.service.RecipeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 public class HelloController {
-    private final RecipeReadService recipeReadService;
+    private final RecipeService recipeService;
 
     @GetMapping()
     public String sayhello() {
@@ -17,7 +17,7 @@ public class HelloController {
 
     @GetMapping("/repo")
     public String getrepo() {
-        return recipeReadService.listAll(null, null).toString();
+        return recipeService.listAll(null, null).toString();
     }
 
 }

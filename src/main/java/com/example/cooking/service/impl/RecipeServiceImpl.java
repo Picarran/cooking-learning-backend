@@ -1,18 +1,14 @@
 package com.example.cooking.service.impl;
 
-import com.example.cooking.dao.entity.IngredientItem;
-import com.example.cooking.dao.entity.OptionalIngredient;
-import com.example.cooking.dao.entity.Recipe;
-import com.example.cooking.dao.entity.RecipeImage;
-import com.example.cooking.dao.entity.RequiredIngredient;
-import com.example.cooking.dao.entity.Step;
+import com.example.cooking.common.exception.CookingException;
+import com.example.cooking.dao.entity.*;
 import com.example.cooking.dao.mapper.OptionalIngredientMapper;
 import com.example.cooking.dao.mapper.RecipeImageMapper;
 import com.example.cooking.dao.mapper.RecipeMapper;
 import com.example.cooking.dao.mapper.RequiredIngredientMapper;
 import com.example.cooking.dao.mapper.StepMapper;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.example.cooking.service.RecipeReadService;
+import com.example.cooking.service.RecipeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +17,7 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
-public class RecipeReadServiceImpl implements RecipeReadService {
+public class RecipeServiceImpl implements RecipeService {
     private final RecipeMapper recipeMapper;
     private final RecipeImageMapper recipeImageMapper;
     private final RequiredIngredientMapper requiredIngredientMapper;
@@ -46,10 +42,93 @@ public class RecipeReadServiceImpl implements RecipeReadService {
     }
 
     @Override
+    public Recipe findById(Long id) {
+        Recipe r = recipeMapper.selectOne(new LambdaQueryWrapper<Recipe>().eq(Recipe::getId, id));
+        if (r != null) populateAssociations(r);
+        else throw CookingException.RecipeNotExist();
+        return r;
+    }
+
+    @Override
     public List<Recipe> findByIds(List<Long> ids) {
         List<Recipe> list = recipeMapper.selectBatchIds(ids);
         list.forEach(this::populateAssociations);
         return list;
+    }
+
+    @Override
+    public Recipe createRecipe(Recipe recipe, Long ownerId) {
+        // shallow save recipe fields
+        Recipe toSave = new Recipe();
+        toSave.setDishName(recipe.getDishName());
+        toSave.setDescription(recipe.getDescription());
+        toSave.setDifficulty(recipe.getDifficulty());
+        toSave.setServings(recipe.getServings());
+        toSave.setCategory(recipe.getCategory());
+        toSave.setOwnerId(ownerId);
+
+        recipeMapper.insert(toSave);
+        Long recipeId = toSave.getId();
+
+        // images
+        List<String> images = recipe.getImages();
+        if (images != null) {
+            for (String img : images) {
+                RecipeImage ri = new RecipeImage();
+                ri.setRecipeId(recipeId);
+                ri.setImageUrl(img);
+                recipeImageMapper.insert(ri);
+            }
+        }
+
+        // ingredients
+        Ingredients ing = recipe.getIngredients();
+        if (ing != null) {
+            if (ing.getRequired() != null) {
+                for (IngredientItem it : ing.getRequired()) {
+                    RequiredIngredient ri = new RequiredIngredient();
+                    ri.setRecipeId(recipeId);
+                    ri.setName(it.getName());
+                    ri.setAmount(it.getAmount());
+                    ri.setNote(it.getNote());
+                    requiredIngredientMapper.insert(ri);
+                }
+            }
+            if (ing.getOptional() != null) {
+                for (IngredientItem it : ing.getOptional()) {
+                    OptionalIngredient oi = new OptionalIngredient();
+                    oi.setRecipeId(recipeId);
+                    oi.setName(it.getName());
+                    oi.setAmount(it.getAmount());
+                    oi.setNote(it.getNote());
+                    optionalIngredientMapper.insert(oi);
+                }
+            }
+        }
+
+        // steps
+        List<Step> steps = recipe.getSteps();
+        if (steps != null) {
+            for (Step s : steps) {
+                Step toStep = new Step();
+                toStep.setRecipeId(recipeId);
+                toStep.setStepNumber(s.getStepNumber());
+                toStep.setDescription(s.getDescription());
+                if (s.getTimeRequirement() != null) {
+                    toStep.setTimeDuration(s.getTimeRequirement().getDuration());
+                    toStep.setTimeType(s.getTimeRequirement().getType());
+                }
+                toStep.setTargetCondition(s.getTargetCondition());
+                toStep.setIsBlockable(s.getIsBlockable());
+                toStep.setHeatLevel(s.getHeatLevel());
+                toStep.setNote(s.getNote());
+                stepMapper.insert(toStep);
+            }
+        }
+
+        populateAssociations(toSave);
+        // return the created recipe with id populated
+        return toSave;
     }
 
     private void populateAssociations(Recipe r) {

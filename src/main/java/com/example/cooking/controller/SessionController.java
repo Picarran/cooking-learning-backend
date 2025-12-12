@@ -4,6 +4,7 @@ import com.example.cooking.dao.entity.CookingRuntime;
 import com.example.cooking.dao.entity.IngredientItem;
 import com.example.cooking.dao.entity.Recipe;
 import com.example.cooking.service.CookingService;
+import com.example.cooking.service.RecipeService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import lombok.Data;
@@ -20,7 +21,7 @@ import java.util.stream.Collectors;
 public class SessionController {
 
     private final CookingService cookingService;
-    private final com.example.cooking.service.RecipeReadService recipeReadService;
+    private final RecipeService recipeService;
     private final ObjectMapper objectMapper = new ObjectMapper();
 
     @PostMapping("/sessions")
@@ -58,7 +59,7 @@ public class SessionController {
 
     @GetMapping("/shopping-list")
     public Result<Map<String, Object>> shoppingList(@RequestParam List<Long> recipeIds) {
-        List<Recipe> recipes = recipeReadService.findByIds(recipeIds);
+        List<Recipe> recipes = recipeService.findByIds(recipeIds);
         List<IngredientItem> all = new ArrayList<>();
         for (Recipe r : recipes) {
             if (r.getIngredients() != null && r.getIngredients().getRequired() != null) {

@@ -18,4 +18,8 @@ public class CookingException extends RuntimeException {
         return new CookingException("用户不存在!");
     }
 
+    public static CookingException RecipeNotExist() {
+        return new CookingException("菜谱不存在!");
+    }
+
 }

@@ -2,13 +2,11 @@ package com.example.cooking.service.impl;
 
 import com.example.cooking.common.convention.wsmessage.WSMessage;
 import com.example.cooking.common.web.WebSocketManager;
-import com.example.cooking.handler.WsHandler;
 import com.example.cooking.dao.entity.Recipe;
 import com.example.cooking.dao.entity.Step;
-import com.example.cooking.dao.mapper.RecipeMapper;
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.example.cooking.dao.entity.CookingRuntime;
 import com.example.cooking.service.CookingService;
+import com.example.cooking.service.RecipeService;
 import com.example.cooking.utils.TimeParser;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -29,7 +27,7 @@ public class CookingServiceImpl implements CookingService {
     private final Map<String, CookingRuntime> cookingMap = new ConcurrentHashMap<>();
     private final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(8);
 
-    private final com.example.cooking.service.RecipeReadService recipeReadService;
+    private final RecipeService recipeService;
 
     private static final ObjectMapper M = new ObjectMapper();
 
@@ -39,7 +37,7 @@ public class CookingServiceImpl implements CookingService {
         // 从数据库找并加入recipes
         for (com.fasterxml.jackson.databind.JsonNode n : dishNamesNode) {
             String name = n.asText();
-            Recipe recipe = recipeReadService.findByDishName(name);
+            Recipe recipe = recipeService.findByDishName(name);
             if (recipe != null) {
                 recipes.add(recipe);
             } else {
