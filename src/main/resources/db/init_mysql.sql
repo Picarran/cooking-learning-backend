@@ -1,60 +1,80 @@
--- MySQL schema for cooking project
+-- MySQL schema for cooking project (synchronized with docs/db_tables.md)
 -- Run in your MySQL server (adjust database name and charset as needed)
-CREATE DATABASE IF NOT EXISTS `cooking` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `cooking`;
+
+-- Drop child tables first to avoid FK errors
+DROP TABLE IF EXISTS `recipe_views`;
+DROP TABLE IF EXISTS `cooking_records`;
+DROP TABLE IF EXISTS `steps`;
+DROP TABLE IF EXISTS `required_ingredients`;
+DROP TABLE IF EXISTS `optional_ingredients`;
+DROP TABLE IF EXISTS `recipe_images`;
+DROP TABLE IF EXISTS `recipes`;
+DROP TABLE IF EXISTS `users`;
+
+-- users table
+CREATE TABLE `users` (
+  `id` BIGINT NOT NULL AUTO_INCREMENT,
+  `openid` VARCHAR(128) NOT NULL COMMENT '微信 openid，唯一',
+  `nickname` VARCHAR(64) DEFAULT NULL,
+  `avatar_url` VARCHAR(512) DEFAULT NULL,
+  `points` BIGINT NOT NULL DEFAULT 0,
+  `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `ux_users_openid` (`openid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- recipes table
-DROP TABLE IF EXISTS `recipes`;
 CREATE TABLE `recipes` (
   `id` BIGINT NOT NULL AUTO_INCREMENT,
   `dish_name` VARCHAR(255) NOT NULL,
   `description` TEXT,
-  `difficulty` INT,
-  `servings` VARCHAR(255),
-  `category` VARCHAR(255),
+  `owner_id` BIGINT NULL COMMENT '上传者 user_id，系统导入的数据为 NULL',
+  `difficulty` TINYINT DEFAULT NULL,
+  `servings` VARCHAR(64) DEFAULT NULL,
+  `category` VARCHAR(64) DEFAULT NULL,
+  `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `uk_dish_name` (`dish_name`)
+  KEY `idx_recipes_owner` (`owner_id`),
+  CONSTRAINT `fk_recipes_owner` FOREIGN KEY (`owner_id`) REFERENCES `users` (`id`) ON DELETE SET NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- recipe images
-DROP TABLE IF EXISTS `recipe_images`;
 CREATE TABLE `recipe_images` (
   `id` BIGINT NOT NULL AUTO_INCREMENT,
   `recipe_id` BIGINT NOT NULL,
   `image_url` VARCHAR(1000),
   PRIMARY KEY (`id`),
-  KEY `idx_recipe_images_recipe_id` (`recipe_id`),
-  CONSTRAINT `fk_recipe_images_recipe` FOREIGN KEY (`recipe_id`) REFERENCES `recipes`(`id`) ON DELETE CASCADE
+  KEY `idx_recipe_images_recipe` (`recipe_id`),
+  CONSTRAINT `fk_recipe_images_recipe` FOREIGN KEY (`recipe_id`) REFERENCES `recipes` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- required ingredients
-DROP TABLE IF EXISTS `required_ingredients`;
 CREATE TABLE `required_ingredients` (
   `id` BIGINT NOT NULL AUTO_INCREMENT,
   `recipe_id` BIGINT NOT NULL,
   `name` VARCHAR(255) NOT NULL,
-  `amount` VARCHAR(255),
-  `note` VARCHAR(500),
+  `amount` VARCHAR(255) DEFAULT NULL,
+  `note` VARCHAR(500) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `idx_required_recipe_id` (`recipe_id`),
-  CONSTRAINT `fk_required_recipe` FOREIGN KEY (`recipe_id`) REFERENCES `recipes`(`id`) ON DELETE CASCADE
+  KEY `idx_required_ing_recipe` (`recipe_id`),
+  CONSTRAINT `fk_required_ing_recipe` FOREIGN KEY (`recipe_id`) REFERENCES `recipes` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- optional ingredients
-DROP TABLE IF EXISTS `optional_ingredients`;
 CREATE TABLE `optional_ingredients` (
   `id` BIGINT NOT NULL AUTO_INCREMENT,
   `recipe_id` BIGINT NOT NULL,
   `name` VARCHAR(255) NOT NULL,
-  `amount` VARCHAR(255),
-  `note` VARCHAR(500),
+  `amount` VARCHAR(255) DEFAULT NULL,
+  `note` VARCHAR(500) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `idx_optional_recipe_id` (`recipe_id`),
-  CONSTRAINT `fk_optional_recipe` FOREIGN KEY (`recipe_id`) REFERENCES `recipes`(`id`) ON DELETE CASCADE
+  KEY `idx_optional_ing_recipe` (`recipe_id`),
+  CONSTRAINT `fk_optional_ing_recipe` FOREIGN KEY (`recipe_id`) REFERENCES `recipes` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- steps table
-DROP TABLE IF EXISTS `steps`;
 CREATE TABLE `steps` (
   `id` BIGINT NOT NULL AUTO_INCREMENT,
   `recipe_id` BIGINT NOT NULL,
@@ -69,6 +89,34 @@ CREATE TABLE `steps` (
   PRIMARY KEY (`id`),
   KEY `idx_steps_recipe_id` (`recipe_id`),
   CONSTRAINT `fk_steps_recipe` FOREIGN KEY (`recipe_id`) REFERENCES `recipes`(`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- recipe views
+CREATE TABLE `recipe_views` (
+  `id` BIGINT NOT NULL AUTO_INCREMENT,
+  `user_id` BIGINT DEFAULT NULL,
+  `recipe_id` BIGINT NOT NULL,
+  `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `idx_recipe_views_recipe` (`recipe_id`),
+  CONSTRAINT `fk_recipe_views_recipe` FOREIGN KEY (`recipe_id`) REFERENCES `recipes` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `fk_recipe_views_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE SET NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- cooking records
+CREATE TABLE `cooking_records` (
+  `id` BIGINT NOT NULL AUTO_INCREMENT,
+  `user_id` BIGINT NOT NULL,
+  `recipe_id` BIGINT NOT NULL,
+  `started_at` DATETIME DEFAULT NULL,
+  `finished_at` DATETIME DEFAULT NULL,
+  `rating` TINYINT DEFAULT NULL,
+  `notes` TEXT DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idx_cooking_records_user` (`user_id`),
+  KEY `idx_cooking_records_recipe` (`recipe_id`),
+  CONSTRAINT `fk_cooking_records_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `fk_cooking_records_recipe` FOREIGN KEY (`recipe_id`) REFERENCES `recipes` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- feedback table
