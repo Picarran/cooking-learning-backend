@@ -13,4 +13,9 @@ public class CookingException extends RuntimeException {
     public static CookingException tokenValidateFail() {
         return new CookingException("非法token或token过期!");
     }
+
+    public static CookingException UserNotExist() {
+        return new CookingException("用户不存在!");
+    }
+
 }
