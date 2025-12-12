@@ -8,7 +8,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
-import com.example.cooking.dto.Result;
+import com.example.cooking.dto.resp.Result;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;

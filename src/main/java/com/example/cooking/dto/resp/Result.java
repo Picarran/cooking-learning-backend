@@ -1,4 +1,4 @@
-package com.example.cooking.dto;
+package com.example.cooking.dto.resp;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

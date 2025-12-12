@@ -3,7 +3,7 @@ package com.example.cooking.controller;
 import com.example.cooking.dao.entity.Recipe;
 import com.example.cooking.service.RecipeReadService;
 import lombok.RequiredArgsConstructor;
-import com.example.cooking.dto.Result;
+import com.example.cooking.dto.resp.Result;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

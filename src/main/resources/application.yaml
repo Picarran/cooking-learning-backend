@@ -13,6 +13,8 @@ mybatis-plus:
 app:
   data-initializer:
     enabled: false
+  jwt:
+    secret: "change_this_to_a_secure_random_value_with_minimum_32_bytes"
 
 server:
   port: 8080
