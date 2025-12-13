@@ -3,21 +3,6 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.example.cooking.dao.mapper.RecipeViewMapper">
-
-    <resultMap id="ViewsListRespMap" type="com.example.cooking.dto.resp.ViewsListResp">
-        <!-- recipe_view columns -->
-        <result property="id" column="view_id"/>
-        <result property="recipeId" column="recipe_id"/>
-
-        <!-- recipe columns -->
-        <result property="dishName" column="dish_name"/>
-        <result property="description" column="description"/>
-
-        <!-- JSON array: images -->
-        <collection property="images" ofType="java.lang.String" column="image_url"
-                    javaType="java.util.List" />
-    </resultMap>
-
     <select id="listUserViews" resultType="com.example.cooking.dto.resp.ViewsListResp">
         SELECT
         rv.id AS id,
