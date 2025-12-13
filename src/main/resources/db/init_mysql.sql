@@ -30,7 +30,7 @@ CREATE TABLE `recipes` (
   `dish_name` VARCHAR(255) NOT NULL,
   `description` TEXT,
   `owner_id` BIGINT NULL COMMENT '上传者 user_id，系统导入的数据为 NULL',
-  `difficulty` TINYINT DEFAULT NULL,
+  `difficulty` TINYINT NOT NULL DEFAULT 1,
   `servings` VARCHAR(64) DEFAULT NULL,
   `category` VARCHAR(64) DEFAULT NULL,
   `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
