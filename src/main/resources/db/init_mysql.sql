@@ -10,6 +10,8 @@ DROP TABLE IF EXISTS `optional_ingredients`;
 DROP TABLE IF EXISTS `recipe_images`;
 DROP TABLE IF EXISTS `recipes`;
 DROP TABLE IF EXISTS `users`;
+DROP TABLE IF EXISTS `courses`;
+
 
 -- users table
 CREATE TABLE `users` (
@@ -130,3 +132,36 @@ CREATE TABLE `feedback` (
   `created_at` DATETIME DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- courses table
+CREATE TABLE `courses` (
+  `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '课程ID',
+  `title` VARCHAR(255) NOT NULL COMMENT '课程标题',
+  `description` TEXT COMMENT '课程描述',
+  `cover_url` VARCHAR(512) DEFAULT NULL COMMENT '封面图URL',
+  `video_url` VARCHAR(1024) NOT NULL COMMENT '课程视频URL',
+  `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='课程表';
+
+INSERT INTO `courses`
+(`title`, `description`, `cover_url`, `video_url`)
+VALUES
+(
+  '家常红烧肉教学',
+  '适合零基础的新手红烧肉教学课程，讲解选材、火候与调味技巧。',
+  'https://example.com/images/courses/hongshaorou.jpg',
+  'https://example.com/videos/hongshaorou.mp4'
+),
+(
+  '5分钟快手早餐',
+  '上班族必备的快手早餐课程，健康、省时、不踩雷。',
+  'https://example.com/images/courses/breakfast.jpg',
+  'https://example.com/videos/breakfast.mp4'
+),
+(
+  '新手厨房刀工入门',
+  '从零开始讲解切丝、切片、切丁等基础刀工技巧。',
+  'https://example.com/images/courses/knife-skills.jpg',
+  'https://example.com/videos/knife-skills.mp4'
+);
