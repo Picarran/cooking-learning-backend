@@ -8,8 +8,12 @@ public interface CookingService {
 
 //    void bindUserWs(String uid, String sid);
 
+    Boolean createSessionWithDishIds(String sid, JsonNode dishesIds);
+
+    @Deprecated
     Boolean createSessionWithDishNames(String sid, JsonNode dishesName);
 
+    @Deprecated
     default boolean createSession(String sid, JsonNode dishesName) {
         return createSessionWithDishNames(sid, dishesName);
     }

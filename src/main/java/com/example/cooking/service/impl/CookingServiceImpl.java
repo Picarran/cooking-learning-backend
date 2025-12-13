@@ -31,17 +31,26 @@ public class CookingServiceImpl implements CookingService {
 
     private static final ObjectMapper M = new ObjectMapper();
 
-    // create session from dishNames JSON array node (from WsHandler)
-    public Boolean createSessionWithDishNames(String sid, com.fasterxml.jackson.databind.JsonNode dishNamesNode) {
+    // create session from dishIds JSON array node (from WsHandler)
+    public Boolean createSessionWithDishIds(String sid, com.fasterxml.jackson.databind.JsonNode dishIdsNode) {
         List<Recipe> recipes = new ArrayList<>();
         // 从数据库找并加入recipes
-        for (com.fasterxml.jackson.databind.JsonNode n : dishNamesNode) {
-            String name = n.asText();
-            Recipe recipe = recipeService.findByDishName(name);
-            if (recipe != null) {
-                recipes.add(recipe);
-            } else {
-                System.err.println("no such dish: " + name);
+        for (com.fasterxml.jackson.databind.JsonNode n : dishIdsNode) {
+            String idStr = "";
+            try {
+                idStr = n.asText();
+                Long id = Long.parseLong(idStr);
+
+                Recipe recipe = recipeService.findById(id);
+                if (recipe != null) {
+                    recipes.add(recipe);
+                } else {
+                    System.err.println("no such dish id: " + id);
+                    return false;
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+                System.err.println("id: " + idStr);
                 return false;
             }
         }
@@ -345,4 +354,37 @@ public class CookingServiceImpl implements CookingService {
         return Optional.ofNullable(cookingMap.get(sid));
     }
 
+    @Deprecated
+    @Override
+    // create session from dishNames JSON array node (from WsHandler)
+    public Boolean createSessionWithDishNames(String sid, com.fasterxml.jackson.databind.JsonNode dishNamesNode) {
+        List<Recipe> recipes = new ArrayList<>();
+        // 从数据库找并加入recipes
+        for (com.fasterxml.jackson.databind.JsonNode n : dishNamesNode) {
+            String name = n.asText();
+            Recipe recipe = recipeService.findByDishName(name);
+            if (recipe != null) {
+                recipes.add(recipe);
+            } else {
+                System.err.println("no such dish: " + name);
+                return false;
+            }
+        }
+        Map<Integer, Integer> stepMap = new HashMap<>();
+        for(int i=0;i<recipes.size();i++){
+            stepMap.put(i,-1);
+        }
+        CookingRuntime cookingRuntime = CookingRuntime.builder()
+                .sid(sid)
+                .recipes(recipes)
+                .stepMap(stepMap)
+                .currentRecipeIndex(0)
+                .taskMap(new HashMap<>())
+                .build();
+
+        cookingMap.put(sid, cookingRuntime);
+
+        return true;
+    }
 }
+

@@ -63,7 +63,7 @@ public class WsHandler extends TextWebSocketHandler {
             case CREATE_SESSION:
                 // 创建做菜会话，body: dishNames[]
                 if (node.has("dishNames") && node.get("dishNames").isArray()) {
-                    Boolean created = cookingService.createSessionWithDishNames(sid ,node.get("dishNames"));
+                    Boolean created = cookingService.createSessionWithDishIds(sid ,node.get("dishNames"));
                     if(created){
                         webSocketManager.send(sid,
                                 WSMessage.buildSuccess(CREATE_SESSION, sid, null)
