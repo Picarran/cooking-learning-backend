@@ -22,4 +22,8 @@ public class CookingException extends RuntimeException {
         return new CookingException("菜谱不存在!");
     }
 
+    public static CookingException CourseNotExist() {
+        return new CookingException("课程不存在!");
+    }
+
 }
