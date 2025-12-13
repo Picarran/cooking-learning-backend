@@ -30,9 +30,10 @@ public class RecipeViewServiceImpl implements RecipeViewService {
     @Override
     public void recordView(Long userId, Long recipeId) {
         if(recipeMapper.selectById(recipeId)==null) throw CookingException.RecipeNotExist();
-        RecipeView rv = new RecipeView();
-        rv.setRecipeId(recipeId);
-        rv.setUserId(userId);
+        RecipeView rv = RecipeView.builder()
+                .recipeId(recipeId)
+                .userId(userId)
+                .build();
         recipeViewMapper.insert(rv);
     }
 

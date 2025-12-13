@@ -1,6 +1,7 @@
 package com.example.cooking.dao.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Builder;
 import lombok.Data;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -12,6 +13,7 @@ import java.time.LocalDateTime;
 import java.util.Date;
 
 @Data
+@Builder
 @TableName("recipe_views")
 public class RecipeView {
     @TableId(type = IdType.AUTO)
