@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.*;
 import java.util.stream.Collectors;
 
+@Deprecated
 @RestController
 @RequestMapping("/api")
 @RequiredArgsConstructor
