@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.cooking.dao.mapper.CookingRecordMapper">
+    <select id="listUserRecord" resultType="com.example.cooking.dto.resp.CookingRecordResp">
+        SELECT
+        cr.id AS id,
+        cr.recipe_id AS recipeId,
+        r.dish_name AS dishName,
+        r.description AS description,
+        (
+        SELECT GROUP_CONCAT(ri.image_url ORDER BY ri.id SEPARATOR ',')
+        FROM recipe_images ri
+        WHERE ri.recipe_id = cr.recipe_id
+        ) AS images,
+        cr.started_at As startedAt,
+        cr.finished_at As finishedAt,
+        cr.rating,
+        cr.notes
+        FROM cooking_records cr
+        LEFT JOIN recipes r ON r.id = cr.id
+        WHERE cr.user_id = #{userId}
+        ORDER BY cr.started_at DESC
+    </select>
+</mapper>
