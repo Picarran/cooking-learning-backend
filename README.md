@@ -21,7 +21,8 @@ message返回sid
 message返回sid， 
 
 data返回这两个菜的主要信息(TODO)
-- createSession(["简易红烧肉","白灼虾"])
+- ~~createSession(["简易红烧肉","白灼虾"])~~
+- createSession([1, 2])
     - {type: 'CREATE_SESSION', message: '4e4eb993-ab79-c374-409e-6d5fd9a2b786', data: null}
 
 ### 拉取下一步：
