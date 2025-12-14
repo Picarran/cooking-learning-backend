@@ -136,24 +136,14 @@ CREATE TABLE `courses` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='课程表';
 
-INSERT INTO `courses`
-(`title`, `description`, `cover_url`, `video_url`)
-VALUES
-(
-  '家常红烧肉教学',
-  '适合零基础的新手红烧肉教学课程，讲解选材、火候与调味技巧。',
-  'https://example.com/images/courses/hongshaorou.jpg',
-  'https://example.com/videos/hongshaorou.mp4'
-),
-(
-  '5分钟快手早餐',
-  '上班族必备的快手早餐课程，健康、省时、不踩雷。',
-  'https://example.com/images/courses/breakfast.jpg',
-  'https://example.com/videos/breakfast.mp4'
-),
-(
-  '新手厨房刀工入门',
-  '从零开始讲解切丝、切片、切丁等基础刀工技巧。',
-  'https://example.com/images/courses/knife-skills.jpg',
-  'https://example.com/videos/knife-skills.mp4'
-);
+INSERT INTO `courses` (`title`, `description`, `cover_url`, `video_url`) VALUES
+('肥牛饭', '#沙茶酱 #肥牛饭 #快手菜 #下饭神器', '/media/covers/沙茶酱-肥牛饭-快手菜-下饭神器.jpg', '/media/videos/沙茶酱-肥牛饭-快手菜-下饭神器.mp4'),
+('酱菜', '355 #下饭菜 #酱菜 #直播中心 #在家做快手菜 注意：记得少放点盐去腌制，要不就会很咸，酱油不用跟菜持平，否则也会太咸', '/media/covers/下饭菜-酱菜-在家做快手菜.jpg', '/media/videos/下饭菜-酱菜-在家做快手菜.mp4'),
+('小炒洋葱牛肉', '上班族必备快手菜~小炒洋葱牛肉，简单下饭', '/media/covers/上班族必备快手菜-小炒洋葱牛肉-简单下饭.jpg', '/media/videos/上班族必备快手菜-小炒洋葱牛肉-简单下饭.mp4'),
+('家常菜', '家常菜 下饭神器 快手菜 日常美食 美食教程', '/media/covers/家常菜-下饭神器-快手菜-日常美食-美食教程.jpg', '/media/videos/家常菜-下饭神器-快手菜-日常美食-美食教程.mp4'),
+('红烧茄子', '家庭版“红烧茄子”详细做法步骤告诉你     #家常菜 #红烧茄子 #下饭菜', '/media/covers/家庭版-红烧茄子-详细做法.jpg', '/media/videos/家庭版-红烧茄子-详细做法.mp4'),
+('手撕包菜', '手撕包菜，简单快手菜的天花板！清脆爽口，下饭神器～#家常菜分享  #手撕包菜的做法  #美味食谱 #美食制作分享', '/media/covers/手撕包菜-清脆爽口.jpg', '/media/videos/手撕包菜-清脆爽口.mp4'),
+('番茄土豆炖牛肉', '番茄土豆炖牛肉的做法教程#美食 #家常菜 #美食教程 #美食做法', '/media/covers/番茄土豆炖牛肉-做法教程.jpg', '/media/videos/番茄土豆炖牛肉-做法教程.mp4'),
+('番茄炒豆腐', '番茄炒豆腐｜家常菜做法｜番茄炒雞蛋吃了幾十年，原來番茄炒豆腐更下飯【山哥山嫂】', '/media/covers/番茄炒豆腐-家常菜-山哥山嫂.jpg', '/media/videos/番茄炒豆腐-家常菜-山哥山嫂.mp4'),
+('萝卜丸子', '萝卜丸子新做法教程 #家庭菜 #美味食谱 #美食制作分享 #美食#美食教程 #家常菜', '/media/covers/萝卜丸子-新做法教程.jpg', '/media/videos/萝卜丸子-新做法教程.mp4'),
+('酸辣鸡丁', '酸辣开味，香嫩可口的下饭菜、快手菜《酸辣鸡丁》', '/media/covers/酸辣鸡丁-酸辣开味.jpg', '/media/videos/酸辣鸡丁-酸辣开味.mp4');
