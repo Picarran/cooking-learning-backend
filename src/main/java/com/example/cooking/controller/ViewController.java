@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class ViewController {
 
-    private final RecipeService recipeService;
     private final com.example.cooking.service.RecipeViewService recipeViewService;
     @PostMapping("/{recipeId}")
     public Result<?> recordView(@PathVariable Long recipeId) {
