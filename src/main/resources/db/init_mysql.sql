@@ -30,6 +30,7 @@ CREATE TABLE `users` (
 CREATE TABLE `recipes` (
   `id` BIGINT NOT NULL AUTO_INCREMENT,
   `dish_name` VARCHAR(255) NOT NULL,
+  `images` VARCHAR(1000) NULL,
   `description` TEXT,
   `owner_id` BIGINT NULL COMMENT '上传者 user_id，系统导入的数据为 NULL',
   `difficulty` TINYINT NOT NULL DEFAULT 1,
@@ -40,16 +41,6 @@ CREATE TABLE `recipes` (
   PRIMARY KEY (`id`),
   KEY `idx_recipes_owner` (`owner_id`),
   CONSTRAINT `fk_recipes_owner` FOREIGN KEY (`owner_id`) REFERENCES `users` (`id`) ON DELETE SET NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- recipe images
-CREATE TABLE `recipe_images` (
-  `id` BIGINT NOT NULL AUTO_INCREMENT,
-  `recipe_id` BIGINT NOT NULL,
-  `image_url` VARCHAR(1000),
-  PRIMARY KEY (`id`),
-  KEY `idx_recipe_images_recipe` (`recipe_id`),
-  CONSTRAINT `fk_recipe_images_recipe` FOREIGN KEY (`recipe_id`) REFERENCES `recipes` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- required ingredients
@@ -81,6 +72,7 @@ CREATE TABLE `steps` (
   `id` BIGINT NOT NULL AUTO_INCREMENT,
   `recipe_id` BIGINT NOT NULL,
   `step_number` INT,
+  `image_url` VARCHAR(1000) NULL,
   `description` TEXT,
   `time_duration` VARCHAR(255),
   `time_type` VARCHAR(255),

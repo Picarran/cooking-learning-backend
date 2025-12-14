@@ -14,7 +14,7 @@ public class CookingRecordResp {
     private Long recipeId;    // recipe.id
     private String dishName;
     private String description;
-    private List<String> images;
+    private String images;
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
@@ -26,15 +26,4 @@ public class CookingRecordResp {
 
     private Integer rating; // 1-5
     private String notes;
-
-    /**
-     * xml中MyBatis 自动调用设置
-     */
-    public void setImages(String imagesStr) {
-        if (imagesStr == null || imagesStr.isEmpty()) {
-            this.images = List.of();
-        } else {
-            this.images = Arrays.asList(imagesStr.split(","));
-        }
-    }
 }

@@ -24,8 +24,7 @@ public class Recipe {
     @TableField("owner_id")
     private Long ownerId;              // 上传者 user id，系统导入为 null
 
-    @TableField(exist = false)
-    private List<String> images;       // 图片列表 (not a direct column)
+    private String images;       // 图片
 
     private String description;        // 描述
 

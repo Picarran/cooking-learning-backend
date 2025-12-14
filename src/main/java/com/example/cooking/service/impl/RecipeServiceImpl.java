@@ -3,7 +3,6 @@ package com.example.cooking.service.impl;
 import com.example.cooking.common.exception.CookingException;
 import com.example.cooking.dao.entity.*;
 import com.example.cooking.dao.mapper.OptionalIngredientMapper;
-import com.example.cooking.dao.mapper.RecipeImageMapper;
 import com.example.cooking.dao.mapper.RecipeMapper;
 import com.example.cooking.dao.mapper.RequiredIngredientMapper;
 import com.example.cooking.dao.mapper.StepMapper;
@@ -19,7 +18,6 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class RecipeServiceImpl implements RecipeService {
     private final RecipeMapper recipeMapper;
-    private final RecipeImageMapper recipeImageMapper;
     private final RequiredIngredientMapper requiredIngredientMapper;
     private final OptionalIngredientMapper optionalIngredientMapper;
     private final StepMapper stepMapper;
@@ -34,6 +32,7 @@ public class RecipeServiceImpl implements RecipeService {
         return list;
     }
 
+    @Deprecated
     @Override
     public Recipe findByDishName(String dishName) {
         Recipe r = recipeMapper.selectOne(new LambdaQueryWrapper<Recipe>().eq(Recipe::getDishName, dishName));
@@ -62,6 +61,7 @@ public class RecipeServiceImpl implements RecipeService {
         Recipe toSave = new Recipe();
         toSave.setDishName(recipe.getDishName());
         toSave.setDescription(recipe.getDescription());
+        toSave.setImages(recipe.getImages());
         toSave.setDifficulty(recipe.getDifficulty());
         toSave.setServings(recipe.getServings());
         toSave.setCategory(recipe.getCategory());
@@ -69,17 +69,6 @@ public class RecipeServiceImpl implements RecipeService {
 
         recipeMapper.insert(toSave);
         Long recipeId = toSave.getId();
-
-        // images
-        List<String> images = recipe.getImages();
-        if (images != null) {
-            for (String img : images) {
-                RecipeImage ri = new RecipeImage();
-                ri.setRecipeId(recipeId);
-                ri.setImageUrl(img);
-                recipeImageMapper.insert(ri);
-            }
-        }
 
         // ingredients
         Ingredients ing = recipe.getIngredients();
@@ -114,6 +103,7 @@ public class RecipeServiceImpl implements RecipeService {
                 toStep.setRecipeId(recipeId);
                 toStep.setStepNumber(s.getStepNumber());
                 toStep.setDescription(s.getDescription());
+                toStep.setImageUrl(s.getImageUrl());
                 if (s.getTimeRequirement() != null) {
                     toStep.setTimeDuration(s.getTimeRequirement().getDuration());
                     toStep.setTimeType(s.getTimeRequirement().getType());
@@ -134,11 +124,6 @@ public class RecipeServiceImpl implements RecipeService {
     private void populateAssociations(Recipe r) {
         if (r == null || r.getId() == null) return;
         Long id = r.getId();
-
-        List<RecipeImage> images = recipeImageMapper.selectList(new LambdaQueryWrapper<RecipeImage>().eq(RecipeImage::getRecipeId, id));
-        if (images != null) {
-            r.setImages(images.stream().map(RecipeImage::getImageUrl).collect(Collectors.toList()));
-        }
 
         List<RequiredIngredient> reqs = requiredIngredientMapper.selectList(new LambdaQueryWrapper<RequiredIngredient>().eq(RequiredIngredient::getRecipeId, id));
         List<OptionalIngredient> opts = optionalIngredientMapper.selectList(new LambdaQueryWrapper<OptionalIngredient>().eq(OptionalIngredient::getRecipeId, id));

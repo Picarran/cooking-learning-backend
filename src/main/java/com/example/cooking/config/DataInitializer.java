@@ -18,7 +18,6 @@ import java.util.List;
 public class DataInitializer implements CommandLineRunner {
 
     private final RecipeMapper recipeMapper;
-    private final RecipeImageMapper recipeImageMapper;
     private final RequiredIngredientMapper requiredIngredientMapper;
     private final OptionalIngredientMapper optionalIngredientMapper;
     private final StepMapper stepMapper;
@@ -48,19 +47,10 @@ public class DataInitializer implements CommandLineRunner {
             toSave.setDifficulty(r.getDifficulty());
             toSave.setServings(r.getServings());
             toSave.setCategory(r.getCategory());
+            toSave.setImages(r.getImages());
 
             recipeMapper.insert(toSave);
             Long recipeId = toSave.getId();
-
-            // images
-            if (r.getImages() != null) {
-                for (String img : r.getImages()) {
-                    RecipeImage ri = new RecipeImage();
-                    ri.setRecipeId(recipeId);
-                    ri.setImageUrl(img);
-                    recipeImageMapper.insert(ri);
-                }
-            }
 
             // ingredients
             if (r.getIngredients() != null) {
@@ -94,6 +84,7 @@ public class DataInitializer implements CommandLineRunner {
                     toStep.setStepNumber(s.getStepNumber());
                     toStep.setRecipeId(recipeId);
                     toStep.setDescription(s.getDescription());
+                    toStep.setImageUrl(s.getImageUrl());
                     if (s.getTimeRequirement() != null) {
                         toStep.setTimeRequirement(s.getTimeRequirement());
                         toStep.setTimeDuration(s.getTimeRequirement().getDuration());

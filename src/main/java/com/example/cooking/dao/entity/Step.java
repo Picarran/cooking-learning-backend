@@ -44,6 +44,6 @@ public class Step {
 
     private String note;                         // 备注
 
-    @TableField(exist = false)
+    @TableField("image_url")
     private String imageUrl; // 不映射到数据库，用于返回给前端
 }

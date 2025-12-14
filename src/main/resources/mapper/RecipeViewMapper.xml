@@ -9,11 +9,7 @@
         rv.recipe_id AS recipeId,
         r.dish_name AS dishName,
         r.description AS description,
-        (
-        SELECT GROUP_CONCAT(ri.image_url ORDER BY ri.id SEPARATOR ',')
-        FROM recipe_images ri
-        WHERE ri.recipe_id = rv.recipe_id
-        ) AS images
+        r.images AS images
         FROM recipe_views rv
         LEFT JOIN recipes r ON r.id = rv.recipe_id
         WHERE rv.user_id = #{userId}
