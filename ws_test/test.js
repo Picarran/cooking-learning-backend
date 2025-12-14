@@ -65,7 +65,7 @@ window.createSession = function (dishes) {
   }
   wsSend({
     type: "CREATE_SESSION",
-    dishNames: dishes,
+    dishIds: dishes,
   });
 };
 
