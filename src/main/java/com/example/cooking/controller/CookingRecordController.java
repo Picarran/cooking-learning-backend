@@ -2,7 +2,6 @@ package com.example.cooking.controller;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.example.cooking.common.exception.CookingException;
-import com.example.cooking.dao.entity.CookingRecord;
 import com.example.cooking.dto.req.CreateCookingRecordReq;
 import com.example.cooking.dto.resp.CookingRecordResp;
 import com.example.cooking.dto.resp.Result;
@@ -11,11 +10,6 @@ import com.example.cooking.utils.UserContext;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Map;
-
 @RestController
 @RequestMapping("/api/cooking-records")
 @RequiredArgsConstructor
@@ -23,7 +17,7 @@ public class CookingRecordController {
 
     private final CookingRecordService cookingRecordService;
     @PostMapping
-    public Result<Void> createRecord(CreateCookingRecordReq req) {
+    public Result<Void> createRecord(@RequestBody CreateCookingRecordReq req) {
         Long uid = UserContext.getUserId();
         if (uid == null) throw CookingException.UserNotExist();
 
