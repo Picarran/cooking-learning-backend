@@ -26,4 +26,7 @@ public class CookingException extends RuntimeException {
         return new CookingException("课程不存在!");
     }
 
+    public static CookingException uploadImageFail() {
+        return new CookingException("上传图片失败!");
+    }
 }
