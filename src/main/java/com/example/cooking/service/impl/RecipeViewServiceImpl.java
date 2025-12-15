@@ -1,5 +1,6 @@
 package com.example.cooking.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.cooking.common.exception.CookingException;
@@ -29,7 +30,8 @@ public class RecipeViewServiceImpl implements RecipeViewService {
                 .recipeId(recipeId)
                 .userId(userId)
                 .build();
-        RecipeView origin = recipeViewMapper.selectById(recipeId);
+        RecipeView origin = recipeViewMapper.selectOne(
+                new LambdaQueryWrapper<RecipeView>().eq(RecipeView::getRecipeId, recipeId));
         if(origin == null) {
             recipeViewMapper.insert(rv);
         } else {
