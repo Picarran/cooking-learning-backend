@@ -1,10 +1,8 @@
 package com.example.cooking.service.impl;
 
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.cooking.common.exception.CookingException;
-import com.example.cooking.dao.entity.Recipe;
 import com.example.cooking.dao.entity.RecipeView;
 import com.example.cooking.dao.mapper.RecipeMapper;
 import com.example.cooking.dao.mapper.RecipeViewMapper;
@@ -14,10 +12,7 @@ import com.example.cooking.service.RecipeViewService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
+import java.time.LocalDateTime;
 
 @Service
 @RequiredArgsConstructor
@@ -34,7 +29,13 @@ public class RecipeViewServiceImpl implements RecipeViewService {
                 .recipeId(recipeId)
                 .userId(userId)
                 .build();
-        recipeViewMapper.insert(rv);
+        RecipeView origin = recipeViewMapper.selectById(recipeId);
+        if(origin == null) {
+            recipeViewMapper.insert(rv);
+        } else {
+            origin.setUpdatedAt(LocalDateTime.now());
+            recipeViewMapper.updateById(origin);
+        }
     }
 
     @Override

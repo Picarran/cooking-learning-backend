@@ -29,4 +29,9 @@ public class RecipeView {
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @TableField("created_at")
     private LocalDateTime createdAt;
+
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @TableField("updated_at")
+    private LocalDateTime updatedAt;
 }

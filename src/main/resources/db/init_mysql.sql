@@ -91,6 +91,7 @@ CREATE TABLE `recipe_views` (
   `user_id` BIGINT DEFAULT NULL,
   `recipe_id` BIGINT NOT NULL,
   `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `idx_recipe_views_recipe` (`recipe_id`),
   CONSTRAINT `fk_recipe_views_recipe` FOREIGN KEY (`recipe_id`) REFERENCES `recipes` (`id`) ON DELETE CASCADE,

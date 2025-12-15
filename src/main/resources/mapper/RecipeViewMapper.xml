@@ -13,7 +13,7 @@
         FROM recipe_views rv
         LEFT JOIN recipes r ON r.id = rv.recipe_id
         WHERE rv.user_id = #{userId}
-        ORDER BY rv.created_at DESC
+        ORDER BY rv.updated_at DESC
     </select>
 
 
