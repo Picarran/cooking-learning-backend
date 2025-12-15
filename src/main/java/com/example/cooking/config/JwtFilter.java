@@ -33,7 +33,7 @@ public class JwtFilter extends OncePerRequestFilter {
     protected boolean shouldNotFilter(HttpServletRequest request) throws ServletException {
         String path = request.getRequestURI();
         // do not filter auth endpoints and static resources
-        return pathMatcher.match("/api/auth/**", path) || path.startsWith("/api/upload") || path.startsWith("/static") || path.startsWith("/favicon.ico");
+        return pathMatcher.match("/api/auth/**", path) || path.startsWith("/static") || path.startsWith("/favicon.ico");
     }
 
     @Override
