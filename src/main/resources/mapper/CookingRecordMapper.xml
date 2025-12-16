@@ -15,7 +15,7 @@
         cr.rating,
         cr.notes
         FROM cooking_records cr
-        LEFT JOIN recipes r ON r.id = cr.id
+        LEFT JOIN recipes r ON r.id = cr.recipe_id
         WHERE cr.user_id = #{userId}
         ORDER BY cr.started_at DESC
     </select>
