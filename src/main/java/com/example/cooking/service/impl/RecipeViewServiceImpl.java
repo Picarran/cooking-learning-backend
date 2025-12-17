@@ -31,7 +31,9 @@ public class RecipeViewServiceImpl implements RecipeViewService {
                 .userId(userId)
                 .build();
         RecipeView origin = recipeViewMapper.selectOne(
-                new LambdaQueryWrapper<RecipeView>().eq(RecipeView::getRecipeId, recipeId));
+                new LambdaQueryWrapper<RecipeView>()
+                        .eq(RecipeView::getRecipeId, recipeId)
+                        .eq(RecipeView::getUserId, userId));
         if(origin == null) {
             recipeViewMapper.insert(rv);
         } else {
