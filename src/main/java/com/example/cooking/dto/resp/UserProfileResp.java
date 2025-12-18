@@ -10,4 +10,6 @@ public class UserProfileResp {
     private String nickname;
     private String avatarUrl;
     private Long points;
+    private Long cookingTime;
+    private Long cookingCount;
 }

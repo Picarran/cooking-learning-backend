@@ -25,6 +25,12 @@ public class User {
 
     private Long points;
 
+    @TableField("cooking_time")
+    private Long cookingTime;
+
+    @TableField("cooking_count")
+    private Long cookingCount;
+
     @TableField("created_at")
     private Date createdAt;
 

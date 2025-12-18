@@ -1,15 +1,13 @@
 package com.example.cooking.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.example.cooking.common.exception.CookingException;
 import com.example.cooking.dao.entity.User;
 import com.example.cooking.dao.mapper.UserMapper;
 import com.example.cooking.dto.resp.UserProfileResp;
 import com.example.cooking.service.UserService;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import java.util.Map;
 
 @Service
 @RequiredArgsConstructor
@@ -44,6 +42,8 @@ public class UserServiceImpl implements UserService {
                 .nickname(user.getNickname())
                 .avatarUrl(user.getAvatarUrl())
                 .points(user.getPoints())
+                .cookingCount(user.getCookingCount())
+                .cookingTime(user.getCookingTime())
                 .build();
     }
 
@@ -61,6 +61,8 @@ public class UserServiceImpl implements UserService {
                 .nickname(user.getNickname())
                 .avatarUrl(user.getAvatarUrl())
                 .points(user.getPoints())
+                .cookingCount(user.getCookingCount())
+                .cookingTime(user.getCookingTime())
                 .build();
     }
 }

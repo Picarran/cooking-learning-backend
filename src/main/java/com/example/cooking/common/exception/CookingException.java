@@ -29,4 +29,8 @@ public class CookingException extends RuntimeException {
     public static CookingException uploadImageFail() {
         return new CookingException("上传图片失败!");
     }
+
+    public static CookingException endTimeBeforeStartTime() {
+        return new CookingException("结束时间比开始时间早!");
+    }
 }

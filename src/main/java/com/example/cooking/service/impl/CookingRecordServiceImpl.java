@@ -1,5 +1,6 @@
 package com.example.cooking.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.cooking.common.exception.CookingException;
@@ -17,10 +18,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.*;
-import java.util.stream.Collectors;
+import java.time.Duration;
 
 @Service
 @RequiredArgsConstructor
@@ -47,8 +45,25 @@ public class CookingRecordServiceImpl implements CookingRecordService {
                 .userId(userId)
                 .build();
 
-        cookingRecordMapper.insert(cr);
+        Duration duration = Duration.between(req.getStartedAt(), req.getFinishedAt());
+        Long seconds = duration.toSeconds();
+        if(seconds < 0) {
+            throw CookingException.endTimeBeforeStartTime();
+        }
+
         user.setPoints(user.getPoints() + recipe.getDifficulty() * 10);
+        user.setCookingTime(user.getCookingTime() + seconds);
+
+        Boolean exists = cookingRecordMapper.exists(
+                new LambdaQueryWrapper<CookingRecord>()
+                        .eq(CookingRecord::getUserId, userId)
+                        .eq(CookingRecord::getRecipeId, req.getRecipeId())
+        );
+        if(!exists) {
+            user.setCookingCount(user.getCookingCount() + 1);
+        }
+
+        cookingRecordMapper.insert(cr);
         userMapper.updateById(user);
     }
 
